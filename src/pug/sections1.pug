@@ -1,13 +1,12 @@
-include trend_samples.pug
+//- include mi.pug
 
 section.section
   .container
     .columns
-      .column.is-one-quarter
-        +test_cards_chart
-      .column.is-one-quarter
-        +related_queries_sample
-      .column.is-one-quarter
-        +related_queries_sample
-      .column.is-one-quarter
-        +related_queries_sample
+      each val in ['HK','US','TW','JP']
+        .column.is-one-quarter
+          +dailyTrendOfLoc(val)
+    .columns
+      each val in ['GB','FR','DE','IT']
+        .column.is-one-quarter
+          +dailyTrendOfLoc(val)

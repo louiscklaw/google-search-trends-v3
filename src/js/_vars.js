@@ -12,3 +12,6 @@ var CARD_STATE_LARGE = 'large';
 var DATA_WIDGET_STATE = 'data-widget-state';
 
 var DATA_CARD_CATEGORY = 'data-card-category';
+
+var max_table_row = 10;
+var max_table_col = 3;

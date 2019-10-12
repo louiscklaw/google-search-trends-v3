@@ -15,8 +15,8 @@ function extract_articles_for_daily_trends ( json_in, num_of_link=99) {
 }
 
 function render_small_table ( json_in ) {
-  var content = _.range( Math.min(json_in.length, 10) ).map( idx => {
-    if ( idx > 4 ) {
+  var content = _.range( Math.min(json_in.length, max_table_row) ).map( idx => {
+    if ( idx > max_table_col ) {
       return get_table_row( [
         idx + 1,
         get_a_href( json_in[idx].title.query, json_in[idx].title.exploreLink ),

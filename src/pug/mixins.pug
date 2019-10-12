@@ -3,14 +3,29 @@ mixin helloworld
   p helloworld
 
 
-mixin dailyTrend
+mixin dailyTrendResult(params)
+  p !{JSON.stringify(apple)}
+
+mixin dailyTrend(apple, card_topic)
+  - var search_id = 'search_'+Math.round(Math.random()*99999)
   .cards.related_topics#related_queries_php(data-card-category="#programming")
     .card_content
-      .card_topic daily trend of HK
-        #dailyTrendResult
+      .card_topic #{card_topic}
+        div(id=search_id)
         script.
-          daily_trends('#dailyTrendResult',{
-            startTime: '2019-01-01',
-            endTime: '2019-01-02',
-            geo: 'HK'
-          });
+          daily_trends( '#'+ '!{search_id}' ,!{JSON.stringify(apple)});
+
+mixin dailyTrendOfLoc(geo_in)
+  +dailyTrend({
+      trendDate: new Date(),
+      geo: geo_in,
+    }, 'daily trend of '+ geo_in)
+
+mixin dailyTrendOfUS
+  +dailyTrendOfLoc('US')
+
+mixin dailyTrendOfHK
+  +dailyTrendOfLoc('HK')
+
+mixin dailyTrendOfTW
+  +dailyTrendOfLoc('TW')
