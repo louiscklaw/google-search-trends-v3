@@ -1,0 +1,148 @@
+include mixins.pug
+
+//- .cards#card_interest_by_region card_interest_by_region
+//- .cards#card_interest_over_time card_interest_over_time
+
+//- .cards#card_read_time_trends card_read_time_trends
+//- .cards#related_queries_Dog1
+//-   div(style="width:100%; height:100%;")
+//-     h3 card_related_queries
+//-     div#card_related_queries
+
+//- .cards
+//-   div
+//-     h3 card_related_topics
+//-     div#card_related_topics
+
+//- .cards#card_daily_trends card_daily_trends
+
+//- .cards#chartjs_test chartjs_test
+//-   div.chart_container
+//-     canvas#myChart
+
+.cards.trending_search#trending_search_of_hk(data-card-category="#trending_search")
+  .card_content
+    +trending_search('trending search of HK today', {
+        trendDate: new Date(),
+        geo: 'HK',
+      })
+
+.cards.trending_search#trending_search_of_us(data-card-category="#trending_search")
+  .card_content
+    +trending_search('trending search of US today', {
+        trendDate: new Date(),
+        geo: 'US',
+      })
+
+.cards.trending_search#trending_search_of_tw(data-card-category="#trending_search")
+  .card_content
+    +trending_search('trending search of TW today', {
+        trendDate: new Date(),
+        geo: 'TW',
+      })
+
+.cards.trending_search#trending_search_of_GB(data-card-category="#trending_search")
+  .card_content
+    +trending_search('trending search of GB today', {
+        trendDate: new Date(),
+        geo: 'GB',
+      })
+
+.cards.trending_search#trending_search_of_FR(data-card-category="#trending_search")
+  .card_content
+    +trending_search('trending search of FR today', {
+        trendDate: new Date(),
+        geo: 'FR',
+      })
+
+.cards.trending_search#trending_search_of_DE(data-card-category="#trending_search")
+  .card_content
+    +trending_search('trending search of DE today', {
+        trendDate: new Date(),
+        geo: 'DE',
+      })
+
+.cards.trending_search#trending_search_of_JP(data-card-category="#trending_search")
+  .card_content
+    +trending_search('trending search of JP today', {
+        trendDate: new Date(),
+        geo: 'JP',
+      })
+
+//- .cards.vector_map(data-card-category="#programming")
+//-   .card_content
+//-     +chart_vector_map('python heat on earth', {
+//-                 keyword: 'python',
+//-                 dayBack: 365 * 5,
+//-                 resolution: 'COUNTRY'
+//-               }, 'world-map')
+
+//- .cards.vector_map(data-card-category="#programming")
+//-   .card_content
+//-     +chart_vector_map('PHP heat on earth', {
+//-                 keyword: 'PHP',
+//-                 dayBack: 365 * 5,
+//-                 resolution: 'COUNTRY'
+//-               }, 'world-map')
+
+.cards.trending_search#trending_search_of_KR(data-card-category="#trending_search")
+  .card_content
+    +trending_search('trending search of KR today', {
+        trendDate: new Date(),
+        geo: 'KR',
+      })
+
+.cards.interest_over_time#language_trend(data-card-category="#programming")
+  .card_content
+    +chart_interest_over_time('language trends\(5 years\)', {
+              keyword: ['python','PHP','javascript','Dart','Rust'],
+              dayBack: 365 * 5,
+            })
+
+//- .cards.related_queries#related_queries_python(data-card-category="#programming")
+//-   .card_content
+//-     +related_queries('python related queries',{keyword: 'python'}, 10)
+
+//- .cards.vector_map(data-card-category="#programming")
+//-   .card_content
+//-     +chart_vector_map('javascript heat on earth', {
+//-                 keyword: 'javascript',
+//-                 dayBack: 365 * 5,
+//-                 resolution: 'COUNTRY'
+//-               }, 'world-map')
+
+//- .cards.vector_map(data-card-category="#programming")
+//-   .card_content
+//-     +chart_vector_map('Kotlin heat on earth', {
+//-                 keyword: 'Kotlin',
+//-                 dayBack: 365 * 5,
+//-                 resolution: 'COUNTRY'
+//-               }, 'world-map')
+
+.cards.related_topics#related_queries_php(data-card-category="#programming")
+  .card_content
+    +related_queries('PHP related queries',{keyword: 'PHP'}, 10)
+
+.cards.related_queries#related_queries_javascript(data-card-category="#programming")
+  .card_content
+    +related_queries('javascript related queries',{keyword: 'javascript'}, 10)
+
+.cards.related_topics#related_queries_Kotlin(data-card-category="#programming")
+  .card_content
+    +related_queries('Kotlin related queries',{keyword: 'Kotlin'}, 10)
+
+//- .cards.vector_map(data-card-category="#programming")
+//-   .card_content
+//-     +chart_vector_map('golang heat on earth', {
+//-                 keyword: 'golang',
+//-                 dayBack: 365 * 5,
+//-                 resolution: 'COUNTRY'
+//-               }, 'world-map')
+
+//- .cards.vector_map(data-card-category="#programming")
+//-   .card_content
+//-     +chart_vector_map('Rust heat on earth', {
+//-                 keyword: 'Rust',
+//-                 dayBack: 365 * 5,
+//-                 resolution: 'COUNTRY'
+//-               }, 'world-map')
