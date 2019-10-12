@@ -1,4 +1,4 @@
 
 function helloworld () {
-  console.log( 'helloworld' );
+  alert( 'helloworld' );
 }
