@@ -16,7 +16,8 @@ const javascriptObfuscator = require( 'gulp-javascript-obfuscator' );
 
 const child_process = require( 'child_process' );
 
-const PROJ_HOME = path.join( __dirname, '..', '..' );
+const PROJ_HOME = path.join( __dirname );
+console.log('PROJ_HOME:"'+ PROJ_HOME+'"' );
 
 
 function html() {

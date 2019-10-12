@@ -93,17 +93,14 @@ mixin chartjs_sample2
 
 mixin map_script
   .
-    <script>
-      $( function () {
-        $( '#world-map1' ).vectorMap( {
-          map: 'world_mill',
-          backgroundColor: "#bdc3c7"
-        } );
-      } );
+    <script type="text/javascript">
+    jQuery(document).ready(function() {
+      jQuery('#vmap').vectorMap({ map: 'world_en' });
+    });
     </script>
 
 mixin map_sample
-  #world-map1(style="height: 100%;width:100%;")
+  #vmap(style="height: 100%;width:100%;")
   +map_script
   p table topics
 

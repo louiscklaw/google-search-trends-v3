@@ -1,15 +1,39 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><title>Document</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/><script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script><script src="js/jquery-jvectormap-2.0.3.min.js"></script><link rel="stylesheet" href="css/jquery-jvectormap-2.0.3.css"/><script src="js/jquery-jvectormap-world-mill.js"></script><link rel="stylesheet" href="css/style.css"/><script src="js/app.min.js"></script></head><body class="has-navbar-fixed-top"><nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation"><div class="navbar-brand"><a class="navbar-item" href="https://www.gstatic.com">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><title>Document</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/><script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.css"/><script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jquery.vmap.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.world.js"></script><link rel="stylesheet" href="css/style.css"/><script src="js/app.min.js"></script></head><body class="has-navbar-fixed-top"><nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation"><div class="navbar-brand"><a class="navbar-item" href="https://www.gstatic.com">
 <img src="https://www.gstatic.com/images/branding/lockups/1x/lockup_trends_color_142x24dp.png" width="112" height="28">
 </a>
 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
 <span aria-hidden="true"></span>
 <span aria-hidden="true"></span>
 <span aria-hidden="true"></span>
-</a></div><div class="navbar-menu" id="navbarBasicExample"><div class="navbar-start"><a class="navbar-item" href="/#home">Home</a><a class="navbar-item" href="/#home">Programming language</a><a class="navbar-item" href="/#home">lihkg vs hkgolden</a><a class="navbar-item" href="/#home">jobs board</a><a class="navbar-item" href="/#home">IOT</a><a class="navbar-item" href="/#home">tech terms</a><div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">更多</a><div class="navbar-dropdown"><a class="navbar-item" href="/#about">About</a><a class="navbar-item" href="/#helloworld">Helloworld</a><a class="navbar-item" href="/#Contact">Contact</a><a class="navbar-item" href="/#Report_an_issue">Report_an_issue</a><a class="navbar-item" href="/#政府統計處">政府統計處</a></div></div></div></div><div class="navbar-end"><a class="navbar-item" href="/#github-source">github source</a></div></nav><section class="section"><div class="container"><div class="columns"><div class="column is-one-quarter"><div class="cards" style="width: 100%; height: 100%;"><h3> chart title </h3>
-<div class="chart_container" >
+</a></div><div class="navbar-menu" id="navbarBasicExample"><div class="navbar-start"><a class="navbar-item" href="/#home">Home</a><a class="navbar-item" href="/#home">Programming language</a><a class="navbar-item" href="/#home">lihkg vs hkgolden</a><a class="navbar-item" href="/#home">jobs board</a><a class="navbar-item" href="/#home">IOT</a><a class="navbar-item" href="/#home">tech terms</a><div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">更多</a><div class="navbar-dropdown"><a class="navbar-item" href="/#about">About</a><a class="navbar-item" href="/#helloworld">Helloworld</a><a class="navbar-item" href="/#Contact">Contact</a><a class="navbar-item" href="/#Report_an_issue">Report_an_issue</a><a class="navbar-item" href="/#政府統計處">政府統計處</a></div></div></div></div><div class="navbar-end"><a class="navbar-item" href="/#github-source">github source</a></div></nav><section class="section"><div class="container"><div class="columns"><div class="column is-one-quarter"><div class="cards"><div class="chart_container"><div class="chart_container" >
   <canvas id="myChart"></canvas>
 </div>
 <script>
+  var dataset1 = {
+        lineTension: 0,
+        label: '# of Votes',
+        data: [ 12, 19, 3, 5, 2, 3 ],
+        backgroundColor: [
+          'rgba(192, 57, 43,0.2)'
+        ],
+        borderColor: [
+          'rgba(192, 57, 43,1.0)'
+        ],
+        borderWidth: 1
+      };
+  var dataset2 = {
+        lineTension: 0,
+        label: '# of Votes',
+        data: [ 13, 22, 22, 3, 55, 11 ],
+        backgroundColor: [
+          'rgba(22, 160, 133,0.2)'
+        ],
+        borderColor: [
+          'rgba(22, 160, 133,1.0)'
+        ],
+        borderWidth: 1
+      };
+
   var option_settings = {
       scales: {
         yAxes: [ {
@@ -22,19 +46,9 @@
       };
 
   var data_input = {
-      labels: [ 'Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange' ],
-      datasets: [ {
-        lineTension: 0,
-        label: '# of Votes',
-        data: [ 12, 19, 3, 5, 2, 3 ],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)'
-        ],
-        borderWidth: 1
-      } ],
+      labels: [ '1', '2', '3', '4', '5', '6' ],
+      datasets: [ dataset1,dataset2
+      ],
     };
   var ctx = document.getElementById( 'myChart' ).getContext( '2d' );
   var myChart = new Chart( ctx, {
@@ -44,18 +58,12 @@
     }
   );
 </script>
-<div class="table_container"><h3>table topics</h3><table class="table"><thead><tr><td>name1</td><td>name2</td><td>name3</td><td>name4</td><td>name5</td></tr></thead><tfoot></tfoot><tbody></tbody><tr><td>value1</td><td>value2</td><td>value3</td><td>value4</td><td>value5</td></tr><tr><td>value1</td><td>value2</td><td>value3</td><td>value4</td><td>value5</td></tr><tr><td>value1</td><td>value2</td><td>value3</td><td>value4</td><td>value5</td></tr></table></div></div></div><div class="column is-one-quarter"><div class="cards"><div class="map_container"><h3> map title </h3>
-<div id="world-map1" style="height: 100%; width:100%;"></div>
-<script>
-  $( function () {
-    $( '#world-map1' ).vectorMap( {
-      map: 'world_mill',
-      backgroundColor: "#bdc3c7"
-    } );
-  } );
+</div><h3>chart topics</h3><div class="content"><div class="table_container"><table class="table"><thead><tr><td>value2</td><td>value2</td><td>value2</td></tr></thead><tfoot></tfoot><tbody></tbody><tr><td>value2</td><td>value2</td><td>value2</td></tr><tr><td>value2</td><td>value2</td><td>value2</td></tr><tr><td>value2</td><td>value2</td><td>value2</td></tr></table></div></div></div></div><div class="column is-one-quarter"><div class="cards"><div class="map_container"><div id="vmap" style="height: 100%;width:100%;"></div><script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery('#vmap').vectorMap({ map: 'world_en' });
+});
 </script>
-
-<div class="table_container"><h3>table topics</h3><table class="table"><thead><tr><td>name1</td><td>name2</td><td>name3</td><td>name4</td><td>name5</td></tr></thead><tfoot></tfoot><tbody></tbody><tr><td>value1</td><td>value2</td><td>value3</td><td>value4</td><td>value5</td></tr><tr><td>value1</td><td>value2</td><td>value3</td><td>value4</td><td>value5</td></tr><tr><td>value1</td><td>value2</td><td>value3</td><td>value4</td><td>value5</td></tr></table></div></div></div></div><div class="column is-one-quarter"><div class="cards related_topics" id="related_queries_php" data-card-category="#programming">
+<p>table topics</p><div class="table_container"><table class="table"><thead><tr><td>value2</td><td>value2</td><td>value2</td></tr></thead><tfoot></tfoot><tbody></tbody><tr><td>value2</td><td>value2</td><td>value2</td></tr><tr><td>value2</td><td>value2</td><td>value2</td></tr><tr><td>value2</td><td>value2</td><td>value2</td></tr></table></div></div></div></div><div class="column is-one-quarter"><div class="cards related_topics" id="related_queries_php" data-card-category="#programming">
   <div class="card_content">
     <h2 class="card_topic">PHP related queries</h2>
     <div class="card_body">
@@ -193,46 +201,35 @@
       </div>
     </div>
   </div>
-</div></div></div></div></section><section class="section"><div class="container"><div class="columns"><div class="column is-one-quarter"><div class="cards" style="width: 100%; height: 100%;"><h3> chart title </h3>
-<div class="chart_container" >
-  <canvas id="myChart"></canvas>
-</div>
-<script>
-  var option_settings = {
-      scales: {
-        yAxes: [ {
-          ticks: {
-            beginAtZero: true
-          }
-        } ]
-      },
-      maintainAspectRatio: false
-      };
+</div></div></div></div></section><section class="section"><div class="container"><div class="columns"><div class="column is-one-quarter"><div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
 
-  var data_input = {
-      labels: [ 'Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange' ],
-      datasets: [ {
-        lineTension: 0,
-        label: '# of Votes',
-        data: [ 12, 19, 3, 5, 2, 3 ],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)'
-        ],
-        borderWidth: 1
-      } ],
-    };
-  var ctx = document.getElementById( 'myChart' ).getContext( '2d' );
-  var myChart = new Chart( ctx, {
-    type: 'line',
-    data: data_input,
-    options: option_settings,
-    }
-  );
-</script>
-<div class="table_container"><h3>table topics</h3><table class="table"><thead><tr><td>name1</td><td>name2</td><td>name3</td><td>name4</td><td>name5</td></tr></thead><tfoot></tfoot><tbody></tbody><tr><td>value1</td><td>value2</td><td>value3</td><td>value4</td><td>value5</td></tr><tr><td>value1</td><td>value2</td><td>value3</td><td>value4</td><td>value5</td></tr><tr><td>value1</td><td>value2</td><td>value3</td><td>value4</td><td>value5</td></tr></table></div></div></div><div class="column is-one-quarter"><div class="cards related_topics" id="related_queries_php" data-card-category="#programming">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">John Smith</p>
+        <p class="subtitle is-6">@johnsmith</p>
+      </div>
+    </div>
+
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+      <a href="#">#css</a> <a href="#">#responsive</a>
+      <br>
+      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+    </div>
+  </div>
+</div>
+</div><div class="column is-one-quarter"><div class="cards related_topics" id="related_queries_php" data-card-category="#programming">
   <div class="card_content">
     <h2 class="card_topic">PHP related queries</h2>
     <div class="card_body">

@@ -9143,7 +9143,7 @@ label.panel-block:hover {
 }
 
 .table_container {
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
 .chart_container {
@@ -9158,7 +9158,7 @@ label.panel-block:hover {
 .cards {
   width: 100%;
   height: 100%;
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 15px;
   box-shadow: 0px 0px 2px 2px #eee;
 }
