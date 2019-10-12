@@ -49,7 +49,6 @@ function js() {
       'src/js/_*.js',
       'src/js/*.js'
     ], { base: './' } ) )
-    .pipe(debug({title: 'unicorn:'}))
     .pipe( concat( 'app.js' ) )
     .pipe( dest( JS_TEMP, {
       sourcemaps: true
