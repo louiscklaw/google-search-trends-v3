@@ -53,6 +53,8 @@ function daily_trends( sel_in, params ) {
     } )
     .then( res => res.json() )
     .then( json => {
-      get_ele( sel_in ).innerHTML = render_small_table(extract_trending_search(json));
+      get_ele( sel_in ).innerHTML = render_small_table( extract_trending_search( json ) );
+
+
     } );
 }

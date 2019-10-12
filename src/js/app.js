@@ -1,5 +1,9 @@
 // app.js
 
+function dailyTrendResult () {
+  document.querySelector( "#dailyTrendResult" ).innerHTML = 'test apple';
+}
+
 
 function highlight_button( sel_in ) {
   console.log( 'highlight_button:' + sel_in );
