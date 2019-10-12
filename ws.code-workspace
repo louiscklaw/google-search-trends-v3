@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/home/logic/_workspace/google-search-trends-gcf"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
