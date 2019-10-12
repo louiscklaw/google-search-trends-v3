@@ -1,4 +1,4 @@
-// common.js
+// _common.js
 
 var ID = function () {
   // Math.random should be unique because of its seeding algorithm.

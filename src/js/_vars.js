@@ -1,4 +1,4 @@
-// vars.js
+// _vars.js
 
 var current_target;
 

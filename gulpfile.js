@@ -12,7 +12,10 @@ const minifyCSS = require( 'gulp-csso' );
 const concat = require( 'gulp-concat' );
 
 const rename = require( 'gulp-rename' );
+
+const order = require("gulp-order");
 const javascriptObfuscator = require( 'gulp-javascript-obfuscator' );
+const debug = require('gulp-debug');
 
 const child_process = require( 'child_process' );
 
@@ -38,14 +41,15 @@ function css(done) {
 }
 
 function js() {
-  return src( [
-      './src/js/_const.js',
-      './src/js/_vars.js',
-      './src/js/_common.js',
-      './src/js/app.js'
-    ], {
-      sourcemaps: true
-    } )
+  return src( ['src/js/*.js'] )
+    .pipe( order( [
+      'src/js/_const.js',
+      'src/js/_vars.js',
+      'src/js/_common.js',
+      'src/js/_*.js',
+      'src/js/*.js'
+    ], { base: './' } ) )
+    .pipe(debug({title: 'unicorn:'}))
     .pipe( concat( 'app.js' ) )
     .pipe( dest( JS_TEMP, {
       sourcemaps: true
