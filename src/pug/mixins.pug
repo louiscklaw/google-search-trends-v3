@@ -29,3 +29,102 @@ mixin dailyTrendOfHK
 
 mixin dailyTrendOfTW
   +dailyTrendOfLoc('TW')
+
+mixin trending_search(topic, params)
+  - var search_id = 'search_'+Math.round(Math.random()*99999)
+  h2.card_topic= topic
+  div.card_body(id=search_id)
+  script.
+    document.addEventListener( "DOMContentLoaded", function () {
+      daily_trends( '#'+ '!{search_id}' ,!{JSON.stringify(params)});
+    } );
+
+mixin chart_interest_over_time(topic, params)
+  h2.card_topic= topic
+  .card_body.chart_container
+  script.
+    document.addEventListener( "DOMContentLoaded", function () {
+      var _chart_id = 'test_chart_id';
+      //- keywords_to_search = [ 'Valentines Day' ];
+      fetch_post_request( {
+          q: Q_INTEREST_OVER_TIME,
+          param: !{JSON.stringify(params)}
+        } )
+        .then( res => res.json() )
+        .then( json => {
+          get_ele( '.chart_container' ).innerHTML = get_chartjs_canvas_html( _chart_id );
+          return json;
+        } )
+        .then( ( json ) => {
+          create_chart( _chart_id, !{JSON.stringify(params.keyword)} , json );
+        } );
+    } );
+
+mixin chart_vector_map(topic, params)
+  - var _id = 'search_'+Math.round(Math.random()*99999)
+  h2.card_topic= topic
+  .card_body
+    //- h3(class="vector_map_title") #{topic} #{map_id}
+    div(id=_id style="width: 100%; height: 100%; position:relative; top:-26px;")
+    script.
+      document.addEventListener( "DOMContentLoaded", () => {
+        fetch_post_request( {
+            q: Q_INTEREST_BY_REGION,
+            param: !{JSON.stringify( params )}
+          } )
+          .then( res => res.json() )
+            .then( json => {
+              var obj = {};
+              json.default.geoMapData.forEach( x => {
+                obj[ x.geoCode ] = x.value[ 0 ];
+              } )
+              return obj;
+            } )
+            .then( result => {
+              $( function () {
+                var temp_map = $( '#'+'!{_id}' ).vectorMap( {
+                  map: 'world_mill',
+                  backgroundColor: 'rgba(255, 255, 255,1.0)',
+                  series: {
+                    regions: [ {
+                      values: result,
+                      scale: [ '#C8EEFF', '#0071A4' ],
+                      normalizeFunction: 'polynomial'
+                    } ]
+                  },
+                  onRegionTipShow: function ( e, el, code ) {
+                    el.html( el.html() + ' (value - ' + result[ code ] + ')' );
+                  }
+                } );
+                new ResizeObserver( () => {
+
+                  var map = $("#"+'!{_id}').vectorMap('get', 'mapObject');
+                  map.updateSize();
+
+                } ).observe( get_ele( '#'+'!{_id}' ) );
+              } );
+
+            } );
+          } );
+
+mixin related_queries(topic, params, max_row)
+  - var _id = 'search_'+Math.round(Math.random()*99999)
+  .cards
+    h2.card_topic= topic
+    .card_body
+      div(id=_id)
+      script.
+        document.addEventListener( "DOMContentLoaded", function () {
+          related_queries( '#'+'!{_id}', !{JSON.stringify(params)}, '!{max_row}' );
+        } );
+
+mixin related_topics(topic, params, max_row)
+  - var _id = 'search_'+Math.round(Math.random()*99999)
+  .cards
+    h2.card_topic= topic
+    .card_body
+      div(id=_id)
+      script.
+        document.addEventListener( "DOMContentLoaded", function () {
+          related_topics( '#'+'!{_id}', !{JSON.stringify(params)}, '!{max_row}' );
+        } );
