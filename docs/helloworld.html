@@ -1,21 +1,49 @@
-<section class="section"><div class="container"><div class="columns"><div class="column is-one-quarter"><div class="cards"><div class="card_body"><div class="chart_container"><canvas id="search_32997"></canvas></div><h3>topic</h3><div class="content"><div class="table_container"><table class="table"><thead><tr><td>value2</td><td>value2</td><td>value2</td></tr></thead><tfoot></tfoot><tbody></tbody><tr><td>value2</td><td>value2</td><td>value2</td></tr><tr><td>value2</td><td>value2</td><td>value2</td></tr><tr><td>value2</td><td>value2</td><td>value2</td></tr></table></div></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
+<section class="section"><div class="container"><div class="columns"><div class="column is-one-quarter"><div class="cards"><div class="card_body"><div class="chart_container"><canvas id="search_91483"></canvas></div><h3>chart</h3><div class="content"><div class="table_container"><table class="table"><thead><tr><td>value2</td><td>value2</td><td>value2</td></tr></thead><tfoot></tfoot><tbody></tbody><tr><td>value2</td><td>value2</td><td>value2</td></tr><tr><td>value2</td><td>value2</td><td>value2</td></tr><tr><td>value2</td><td>value2</td><td>value2</td></tr></table></div></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
 fetch_post_request( {
     q: Q_INTEREST_OVER_TIME,
     param: {"geo":"HK","keyword":["apple","orange","banana","pear","grapse"]}
   } )
   .then( res => res.json() )
   .then( ( json ) => {
-    create_chart( "#"+"search_32997", ["apple","orange","banana","pear","grapse"] , json );
+    create_chart( "#"+"search_91483", ["apple","orange","banana","pear","grapse"] , json );
   } );
 
-</script></div></div><div class="column is-one-quarter"><div class="cards"><div class="card_body"><div class="chart_container"><canvas id="search_5177"></canvas></div><h3>topic</h3><div class="content"><div class="table_container"><table class="table"><thead><tr><td>value2</td><td>value2</td><td>value2</td></tr></thead><tfoot></tfoot><tbody></tbody><tr><td>value2</td><td>value2</td><td>value2</td></tr><tr><td>value2</td><td>value2</td><td>value2</td></tr><tr><td>value2</td><td>value2</td><td>value2</td></tr></table></div></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
+</script></div></div><div class="column is-one-quarter"><div class="cards"><div class="card_body"><div class="chart_container"><canvas id="search_92156"></canvas></div><h3>lang compare 1 year</h3><div class="content"><div class="table_container"><table class="table"><thead><tr><td>value2</td><td>value2</td><td>value2</td></tr></thead><tfoot></tfoot><tbody></tbody><tr><td>value2</td><td>value2</td><td>value2</td></tr><tr><td>value2</td><td>value2</td><td>value2</td></tr><tr><td>value2</td><td>value2</td><td>value2</td></tr></table></div></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
 fetch_post_request( {
     q: Q_INTEREST_OVER_TIME,
     param: {"geo":"HK","keyword":["PHP","python","javascript"],"dayBack":365}
   } )
   .then( res => res.json() )
   .then( ( json ) => {
-    create_chart( "#"+"search_5177", ["PHP","python","javascript"] , json );
+    create_chart( "#"+"search_92156", ["PHP","python","javascript"] , json );
   } );
 
-</script></div></div></div></div></section>
+</script></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">python heat by region</h2><div class="map_container"><div id="search_78047" style="height:100%; width:100%;"></div><script>var jqvmap_config = {
+  map: 'world_en',
+  backgroundColor: 'rgba(189, 195, 199,0.1)',
+  hoverOpacity: 0.7,
+  hoverColor: false
+}
+
+fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"python","dayBack":1825,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+  jQuery( '#' + 'search_78047' ).vectorMap(jqvmap_config );
+} )
+
+
+
+
+</script></div></div></div></div></div></section>

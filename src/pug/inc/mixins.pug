@@ -47,7 +47,7 @@ mixin chart_interest_over_time(topic, params)
     .card_body
       .chart_container
         canvas(id=_id)
-      h3 topic
+      h3 #{topic}
       .content
         +sample_table([1,2,3])
 
@@ -65,49 +65,84 @@ mixin chart_interest_over_time(topic, params)
 
 mixin chart_vector_map(topic, params)
   - var _id = 'search_'+Math.round(Math.random()*99999)
-  h2.card_topic= topic
-  .card_body
-    //- h3(class="vector_map_title") #{topic} #{map_id}
-    div(id=_id style="width: 100%; height: 100%; position:relative; top:-26px;")
-    script.
-      document.addEventListener( "DOMContentLoaded", () => {
+  .cards
+    h2.card_topic #{topic}
+    .map_container
+      div(id=_id style="height:100%; width:100%;")
+      script.
+        var jqvmap_config = {
+          map: 'world_en',
+          backgroundColor: 'rgba(189, 195, 199,0.1)',
+          hoverOpacity: 0.7,
+          hoverColor: false
+        }
+
+        fetch_post_request( {
+          q: Q_INTEREST_BY_REGION,
+          param: !{JSON.stringify( params )}
+        } )
+        .then( res => res.json())
+        .then( json => {
+          var obj = {};
+          json.default.geoMapData.forEach( x => {
+            obj[ x.geoCode ] = x.value[ 0 ];
+          } )
+          return obj;
+        })
+        .then( result => {
+          jqvmap_config['colors']= calc_colors_for_jqvmap(
+            result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+          jQuery( '#' + '!{_id}' ).vectorMap(jqvmap_config );
+        } )
+
+
+
+
+
+mixin chart_vector_map_old(topic, params)
+  - var _id = 'search_'+Math.round(Math.random()*99999)
+  .cards
+    h2.card_topic= topic
+    .card_body
+      //- h3(class="vector_map_title") #{topic} #{map_id}
+      div(id=_id style="width: 100%; height: 100%; position:relative; top:-26px;")
+      script.
         fetch_post_request( {
             q: Q_INTEREST_BY_REGION,
             param: !{JSON.stringify( params )}
           } )
           .then( res => res.json() )
-            .then( json => {
-              var obj = {};
-              json.default.geoMapData.forEach( x => {
-                obj[ x.geoCode ] = x.value[ 0 ];
-              } )
-              return obj;
+          .then( json => {
+            var obj = {};
+            json.default.geoMapData.forEach( x => {
+              obj[ x.geoCode ] = x.value[ 0 ];
             } )
-            .then( result => {
-              $( function () {
-                var temp_map = $( '#'+'!{_id}' ).vectorMap( {
-                  map: 'world_mill',
-                  backgroundColor: 'rgba(255, 255, 255,1.0)',
-                  series: {
-                    regions: [ {
-                      values: result,
-                      scale: [ '#C8EEFF', '#0071A4' ],
-                      normalizeFunction: 'polynomial'
-                    } ]
-                  },
-                  onRegionTipShow: function ( e, el, code ) {
-                    el.html( el.html() + ' (value - ' + result[ code ] + ')' );
-                  }
-                } );
-                new ResizeObserver( () => {
-
-                  var map = $("#"+'!{_id}').vectorMap('get', 'mapObject');
-                  map.updateSize();
-
-                } ).observe( get_ele( '#'+'!{_id}' ) );
+            return obj;
+          } )
+          .then( result => {
+            $( function () {
+              var temp_map = $( '#' + '!{_id}' ).vectorMap( {
+                map: 'world_mill',
+                backgroundColor: 'rgba(255, 255, 255,1.0)',
+                series: {
+                  regions: [ {
+                    values: result,
+                    scale: [ '#C8EEFF', '#0071A4' ],
+                    normalizeFunction: 'polynomial'
+                  } ]
+                },
+                onRegionTipShow: function ( e, el, code ) {
+                  el.html( el.html() + ' (value - ' + result[ code ] + ')' );
+                }
               } );
+              new ResizeObserver( () => {
 
+                var map = $( "#" + '!{_id}' ).vectorMap( 'get', 'mapObject' );
+                map.updateSize();
+
+              } ).observe( get_ele( '#' + '!{_id}' ) );
             } );
+
           } );
 
 mixin related_queries(topic, params, max_row)

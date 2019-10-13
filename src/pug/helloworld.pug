@@ -15,3 +15,9 @@ section.section
           keyword: ['PHP','python','javascript'],
           dayBack: 365 * 1
         })
+      .column.is-one-quarter
+        +chart_vector_map('python heat by region', {
+            keyword: 'python',
+            dayBack: 365 * 5,
+            resolution: 'COUNTRY'
+          }, 'world-map')
