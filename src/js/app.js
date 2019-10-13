@@ -26,13 +26,12 @@ function update_highlight_button( hash_in ) {
         x.classList.remove( 'nav_button_highlighted' );
       }
     }
-
-
   } )
 }
 
-function update_cards_placeholder ( content ) {
+function update_cards_placeholder ( content, cb ) {
   get_ele( '.cards_placeholder' ).innerHTML = content;
+  return cb();
 }
 
 function fetch_get_html_content ( uri_in ) {
@@ -40,7 +39,11 @@ function fetch_get_html_content ( uri_in ) {
   console.log( uri_in );
   fetch_get( '/'+uri_in )
     .then( res => res.text() )
-    .then( html_content => update_cards_placeholder(html_content) );
+    .then( html_content => update_cards_placeholder( html_content, () => {
+      get_eles( '.cards_placeholder script' ).forEach( x => {
+        eval( x.textContent );
+      })
+    }) );
 }
 
 function hash_to_page ( hash_in ) {
@@ -176,6 +179,8 @@ document.addEventListener( "DOMContentLoaded", function () {
   }
   // init_click_monitor();
   listen_to_hash_change();
+
+  fetch_get_html_content( hash_to_page( window.location.hash ) );
 
   // init_grid_animation();
 } );

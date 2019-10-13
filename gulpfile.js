@@ -31,9 +31,7 @@ console.log( 'PROJ_HOME:"' + PROJ_HOME + '"' );
 
 function html() {
   return src( [
-    'src/pug/index.pug',
-    'src/pug/programming_language.pug',
-    'src/pug/home.pug'
+    '!src/pug/_*.pug','src/pug/*.pug'
   ] )
     .pipe( pug() )
     .pipe( dest( PUBLIC_ROOT ) );

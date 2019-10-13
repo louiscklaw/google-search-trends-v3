@@ -114,9 +114,7 @@ mixin related_queries(topic, params, max_row)
     .card_body
       div(id=_id)
       script.
-        document.addEventListener( "DOMContentLoaded", function () {
-          related_queries( '#'+'!{_id}', !{JSON.stringify(params)}, '!{max_row}' );
-        } );
+        related_queries( '#'+'!{_id}', !{JSON.stringify(params)}, '!{max_row}' );
 
 mixin related_topics(topic, params, max_row)
   - var _id = 'search_'+Math.round(Math.random()*99999)
@@ -125,6 +123,4 @@ mixin related_topics(topic, params, max_row)
     .card_body
       div(id=_id)
       script.
-        document.addEventListener( "DOMContentLoaded", function () {
-          related_topics( '#'+'!{_id}', !{JSON.stringify(params)}, '!{max_row}' );
-        } );
+        related_topics( '#'+'!{_id}', !{JSON.stringify(params)}, '!{max_row}' );
