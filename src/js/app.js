@@ -31,11 +31,37 @@ function update_highlight_button( hash_in ) {
   } )
 }
 
+function update_cards_placeholder ( content ) {
+  get_ele( '.cards_placeholder' ).innerHTML = content;
+}
+
+function fetch_get_html_content ( uri_in ) {
+  console.log( 'fetch-new-page' );
+  console.log( uri_in );
+  fetch_get( '/'+uri_in )
+    .then( res => res.text() )
+    .then( html_content => update_cards_placeholder(html_content) );
+}
+
+function hash_to_page ( hash_in ) {
+  return unescape( hash_in+'.html' )
+    .replace( '#', '' )
+    .replace( / /g, '_' )
+    .toLowerCase();
+}
+
 function listen_to_hash_change() {
   window.addEventListener( 'hashchange', function () {
     // clear_all_highlight_button();
-    update_highlight_button( window.location.hash );
-    refresh_cards_size(window.location.hash);
+
+    // update_highlight_button( window.location.hash );
+    // refresh_cards_size(window.location.hash);
+    console.log( window.location.hash );
+    console.log( 'hash change' );
+    this.console.log( hash_to_page( window.location.hash ) );
+
+    fetch_get_html_content( hash_to_page( window.location.hash ) );
+
   } );
 }
 

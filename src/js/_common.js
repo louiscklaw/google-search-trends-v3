@@ -110,6 +110,10 @@ function get_table (thead, table_content ) {
   ].join( '' );
 }
 
+function fetch_get ( uri ) {
+  return fetch( uri );
+}
+
 function helloworld_date () {
   return new Date();
 }
