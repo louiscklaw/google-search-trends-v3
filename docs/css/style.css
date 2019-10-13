@@ -9152,6 +9152,7 @@ label.panel-block:hover {
 
 .chart_container {
   height: 200px;
+  width: 100%;
 }
 
 .map_container {

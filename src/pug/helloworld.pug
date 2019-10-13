@@ -1,2 +1,17 @@
-include inc/sections.pug
-include inc/sections1.pug
+include inc/trend_samples.pug
+include inc/mixins.pug
+
+section.section
+  .container
+    .columns
+      .column.is-one-quarter
+        +chart_interest_over_time('chart', {
+          geo: 'HK',
+          keyword: ['apple','orange','banana','pear','grapse']
+        })
+      .column.is-one-quarter
+        +chart_interest_over_time('lang compare 1 year', {
+          geo: 'HK',
+          keyword: ['PHP','python','javascript'],
+          dayBack: 365 * 1
+        })

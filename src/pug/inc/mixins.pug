@@ -1,3 +1,5 @@
+include trend_samples.pug
+
 
 mixin helloworld
   p helloworld
@@ -40,25 +42,26 @@ mixin trending_search(topic, params)
     } );
 
 mixin chart_interest_over_time(topic, params)
-  h2.card_topic= topic
-  .card_body.chart_container
-  script.
-    document.addEventListener( "DOMContentLoaded", function () {
-      var _chart_id = 'test_chart_id';
+  - var _id = 'search_'+Math.round(Math.random()*99999)
+  .cards
+    .card_body
+      .chart_container
+        canvas(id=_id)
+      h3 topic
+      .content
+        +sample_table([1,2,3])
+
+    script.
       //- keywords_to_search = [ 'Valentines Day' ];
       fetch_post_request( {
           q: Q_INTEREST_OVER_TIME,
           param: !{JSON.stringify(params)}
         } )
         .then( res => res.json() )
-        .then( json => {
-          get_ele( '.chart_container' ).innerHTML = get_chartjs_canvas_html( _chart_id );
-          return json;
-        } )
         .then( ( json ) => {
-          create_chart( _chart_id, !{JSON.stringify(params.keyword)} , json );
+          create_chart( "#"+"!{_id}", !{JSON.stringify(params.keyword)} , json );
         } );
-    } );
+
 
 mixin chart_vector_map(topic, params)
   - var _id = 'search_'+Math.round(Math.random()*99999)

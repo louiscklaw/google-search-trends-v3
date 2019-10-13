@@ -132,8 +132,9 @@ function extract_chart_data( json_in, idx = 0 ) {
 //   };
 // }
 
-function create_chart( chart_id, keywords_in, data_json ) {
-  var ctx = document.getElementById( chart_id ).getContext( '2d' );
+function create_chart ( chart_id_sel_in, keywords_in, data_json ) {
+  console.log( chart_id_sel_in );
+  var ctx = get_ele( chart_id_sel_in ).getContext( '2d' );
   var chart = new Chart( ctx, {
     type: 'line',
     data: {

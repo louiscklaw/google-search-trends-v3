@@ -1,5 +1,24 @@
 include inc/mixins.pug
-include inc/trend_samples.pug
+
+section.section
+  .container
+    .columns
+      each year in [1,5]
+        .column.is-one-quarter
+          +chart_interest_over_time('lang compare '+year+' year', {
+            geo: 'HK',
+            keyword: ['PHP','python','javascript'],
+            dayBack: 365 * year
+          })
+
+      .column.is-half
+        each year in [10]
+          +chart_interest_over_time('lang compare '+year+' year', {
+            geo: 'HK',
+            keyword: ['PHP','python','javascript'],
+            dayBack: 365 * year
+          })
+
 
 section.section
   .container
