@@ -1,0 +1,29 @@
+<section class="section"><div class="container"><div class="columns"><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">test heat map</h2><div class="map_container"><div id="search_47112" style="height:100%; width:100%;"></div><script>var jqvmap_config = {
+  map: 'world_en',
+  backgroundColor: 'rgba(189, 195, 199,0.1)',
+  hoverOpacity: 0.7,
+  hoverColor: false
+}
+
+fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"apple","dayBack":365,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_4832" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+  jQuery( '#' + 'search_47112' ).vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_4832" style="text-align: center;"></table></div></div></div></div></div></section>

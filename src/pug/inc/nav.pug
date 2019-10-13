@@ -12,17 +12,12 @@ nav(class="navbar is-fixed-top is-transparent" role="navigation" aria-label="mai
 
   div(id="navbarBasicExample" class="navbar-menu")
     .navbar-start
-      each val in ['Home', 'Programming language','lihkg vs hkgolden','jobs ads', 'IOT','tech terms']
+      each val in ['Helloworld', 'Programming language','lihkg vs hkgolden','jobs ads', 'IOT','tech terms']
         a.navbar-item(href="/#"+ escape(val)) #{val}
-        //- a.navbar-item(href="/#home") Programming language
-        //- a.navbar-item(href="/#home") lihkg vs hkgolden
-        //- a.navbar-item(href="/#home") jobs board
-        //- a.navbar-item(href="/#home") IOT
-        //- a.navbar-item(href="/#home") tech terms
       div(class="navbar-item has-dropdown is-hoverable")
         a(class="navbar-link") 更多
         div.navbar-dropdown
-          each val in ['about','helloworld','contact', 'report an issue','政府統計處']
+          each val in ['about','hello map','contact', 'report an issue','政府統計處']
             a.navbar-item(href="/#"+escape(val)) #{val}
 
   div.navbar-end

@@ -9168,6 +9168,15 @@ label.panel-block:hover {
   box-shadow: 0px 0px 2px 2px #eee;
 }
 
+.table_container .title {
+  margin-top: 3px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.table_container .top_3_country td {
+  text-align: center !important;
+}
+
 body {
   min-height: 100vh;
 }

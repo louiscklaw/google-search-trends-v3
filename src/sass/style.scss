@@ -7,10 +7,10 @@
 // Set your brand colors
 
 // Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
+$family-sans-serif: "Nunito",
+sans-serif;
 
-$background: hsl(0, 0%, 95%)
-;
+$background: hsl(0, 0%, 95%);
 
 $widescreen-enabled: false;
 $fullhd-enabled: false;
@@ -21,7 +21,7 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
-.hide_column{
+.hide_column {
   display: none;
 }
 
@@ -30,12 +30,12 @@ $input-shadow: none;
 }
 
 // for chartjs
-.chart_container{
+.chart_container {
   height: 200px;
   width: 100%;
 }
 
-.map_container{
+.map_container {
   height: 200px;
   width: 100%;
 }
@@ -51,12 +51,27 @@ $input-shadow: none;
 
 }
 
+.table_container {
+  .title{
+    // padding: 0px 3px;
+    margin-top: 3px ;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  .top_3_country {
+    td {
+      text-align: center !important;
+    }
+  }
+
+}
+
 body {
   min-height: 100vh;
 }
 
 table {
-  width:100%;
+  width: 100%;
   font-size: 0.8em;
 
 }

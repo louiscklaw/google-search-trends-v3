@@ -7,7 +7,7 @@ section.section
         .column.is-one-quarter
           +chart_interest_over_time('lang compare '+year+' year', {
             geo: 'HK',
-            keyword: ['PHP','python','javascript'],
+            keyword: ['PHP','python','javascript','golang','RUST'],
             dayBack: 365 * year
           })
 
@@ -15,7 +15,7 @@ section.section
         each year in [10]
           +chart_interest_over_time('language compare '+year+' year', {
             geo: 'HK',
-            keyword: ['PHP','python','javascript'],
+            keyword: ['PHP','python','javascript','golang','RUST'],
             dayBack: 365 * year
           })
 
