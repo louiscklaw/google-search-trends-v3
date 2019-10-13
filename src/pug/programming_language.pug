@@ -19,14 +19,25 @@ section.section
             dayBack: 365 * year
           })
 
-
 section.section
   .container
+    each years in [1,5,10]
+      .columns
+        each prog_lang in ['PHP','python','Ruby', 'javascript', 'RUST']
+          .column.is-one-fifth
+            +chart_vector_map( prog_lang + ' heat by region ('+years+' year)', {
+              keyword: prog_lang,
+              dayBack: 365 * years,
+              resolution: 'COUNTRY'
+            }, 'world-map')
+
+
+  .container
     .columns
-      each val in ['PHP','python','Ruby', 'javascript']
-        .column.is-one-quarter
+      each val in ['PHP','python','Ruby', 'javascript', 'RUST']
+        .column.is-one-fifth
           +related_queries(val+' related queries',{keyword: val}, 10)
     .columns
-      each val in ['PHP','python','Ruby', 'javascript']
-        .column.is-one-quarter
+      each val in ['PHP','python','Ruby', 'javascript', 'RUST']
+        .column.is-one-fifth
           +related_topics(val+' related topics',{keyword: val}, 10)
