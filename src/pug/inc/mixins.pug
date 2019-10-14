@@ -94,21 +94,23 @@ mixin chart_vector_map(topic, params)
           var jqvmap_config = {
             map: 'world_en',
             backgroundColor: 'rgba(189, 195, 199,0.1)',
-            hoverOpacity: 0.7,
-            hoverColor: false,
+            hoverColor: 'rgba(211, 84, 0,1.0)',
             enableZoom: false,
             onLabelShow: function ( event, label, code ) {
+
               label.html(
                 tooltips_template
                   .replace('$country_name$', cc_conv[code])
                   .replace('$value$', result[code.toUpperCase()])
-               );
-            },
+              );
+            }
           }
 
           jqvmap_config['colors']= calc_colors_for_jqvmap(
             result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
-          jQuery( '#' + '!{_id}' ).vectorMap(jqvmap_config );
+
+          var map_!{_id} = jQuery( '#' + '!{_id}' );
+          map_!{_id}.vectorMap(jqvmap_config );
         } )
 
     .table_container
