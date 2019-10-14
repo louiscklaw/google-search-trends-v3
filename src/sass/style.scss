@@ -21,6 +21,14 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
+.empty_page {
+  text-align: center;
+}
+
+.card_placeholder {
+  min-height: calc(100vh);
+}
+
 .hide_column {
   display: none;
 }

@@ -9142,6 +9142,14 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+.empty_page {
+  text-align: center;
+}
+
+.card_placeholder {
+  min-height: calc(100vh);
+}
+
 .hide_column {
   display: none;
 }
