@@ -71,12 +71,6 @@ mixin chart_vector_map(topic, params)
     .map_container
       div(id=_id style="height:100%; width:100%;")
       script.
-        var jqvmap_config = {
-          map: 'world_en',
-          backgroundColor: 'rgba(189, 195, 199,0.1)',
-          hoverOpacity: 0.7,
-          hoverColor: false
-        }
 
         fetch_post_request( {
           q: Q_INTEREST_BY_REGION,
@@ -94,6 +88,23 @@ mixin chart_vector_map(topic, params)
           get_ele( "#" + "#{_table_id}" ).innerHTML = gen_top_x_table(
             result,
             3);
+
+          var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+          var jqvmap_config = {
+            map: 'world_en',
+            backgroundColor: 'rgba(189, 195, 199,0.1)',
+            hoverOpacity: 0.7,
+            hoverColor: false,
+            enableZoom: false,
+            onLabelShow: function ( event, label, code ) {
+              label.html(
+                tooltips_template
+                  .replace('$country_name$', cc_conv[code])
+                  .replace('$value$', result[code.toUpperCase()])
+               );
+            },
+          }
 
           jqvmap_config['colors']= calc_colors_for_jqvmap(
             result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );

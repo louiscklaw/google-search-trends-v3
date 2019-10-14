@@ -11,3 +11,6 @@ const Q_RELATED_QUERIES = "relatedQueries";
 const Q_RELATED_TOPICS = "relatedTopics";
 
 const TYPE_TRENDS = 'trends';
+
+
+// search_terms
