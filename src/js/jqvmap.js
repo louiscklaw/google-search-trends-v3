@@ -8,6 +8,9 @@
 //     colors = {},
 //     hex;
 
+var LABEL_COUNTRY_VALUE = 'Value';
+var LABEL_COUNTRY_NAME = 'Country';
+
 function get_top_x_location ( map_result_in, value_wanted ) {
   var locations = [];
   Object.keys( map_result_in ).forEach( cc => {
@@ -37,7 +40,7 @@ function encap_html_tag ( value, tag ) {
 }
 function gen_table_content( map_result_in, top_x ) {
   return get_top_from_map( map_result_in, top_x ).map( x => {
-    var locations = x[ 1 ].map( x => cc_conv[x.toLowerCase()]).join( ',' );
+    var locations = x[ 1 ].map( x => cc_conv[x.toLowerCase()]).join( '<br>' );
     return encap_html_tag(
       encap_html_tag( x[ 0 ], 'td' ) + encap_html_tag( locations, 'td' ),
       'tr'
@@ -59,7 +62,7 @@ function gen_top_x_table ( map_result_in, top_x )
 {
 
   return '<table class="table">'
-    + gen_table_column_header( ['value', 'country'] )
+    + gen_table_column_header( [LABEL_COUNTRY_VALUE, LABEL_COUNTRY_NAME] )
     + gen_table_content( map_result_in, top_x ).join('')
     + '</table>';
 }
