@@ -1,4 +1,4 @@
-<section class="section"><div class="container"><div class="columns"><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">test heat map</h2><div class="map_container"><div id="search_82275" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+<section class="section"><div class="container"><div class="columns"><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">test heat map</h2><div class="map_container"><div id="search_20936" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"apple","dayBack":365,"resolution":"COUNTRY"}
 } )
@@ -11,7 +11,7 @@
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_75944" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_42539" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -34,6 +34,6 @@
 
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
-  jQuery( '#' + 'search_82275' ).vectorMap(jqvmap_config );
+  jQuery( '#' + 'search_20936' ).vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_75944" style="text-align: center;"></table></div></div></div></div></div></section>
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_42539" style="text-align: center;"></table></div></div></div></div></div></section>
