@@ -61,7 +61,7 @@ function listen_to_hash_change() {
     // refresh_cards_size(window.location.hash);
     console.log( window.location.hash );
     console.log( 'hash change' );
-    this.console.log( hash_to_page( window.location.hash ) );
+    console.log( hash_to_page( window.location.hash ) );
 
     fetch_get_html_content( hash_to_page( window.location.hash ) );
 
@@ -173,14 +173,10 @@ document.addEventListener( "DOMContentLoaded", function () {
   //   window.location.hash = DEFAULT_HASH;
   // }
   if ( window.location.hash == '' ) {
-    update_highlight_button( DEFAULT_HASH );
+    fetch_get_html_content( hash_to_page( DEFAULT_HASH ) );
   } else {
-    update_highlight_button( window.location.hash );
+    fetch_get_html_content( hash_to_page( window.location.hash ) );
   }
   // init_click_monitor();
   listen_to_hash_change();
-
-  fetch_get_html_content( hash_to_page( window.location.hash ) );
-
-  // init_grid_animation();
 } );
