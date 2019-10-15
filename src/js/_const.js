@@ -1,6 +1,6 @@
 // _const.js
 
-const DEFAULT_HASH = '#home';
+const DEFAULT_HASH = '#helloworld';
 const localhost_API = 'http://localhost:8082';
 const API_BASE_URL = 'https://us-central1-louislabs-com.cloudfunctions.net/google-trends-crawler';
 
