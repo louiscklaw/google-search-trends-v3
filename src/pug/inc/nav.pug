@@ -13,12 +13,12 @@ nav(class="navbar is-fixed-top is-transparent" role="navigation" aria-label="mai
   div(id="navbarBasicExample" class="navbar-menu")
     .navbar-start
       each val in ['Helloworld', 'Programming language','lihkg vs hkgolden','jobs ads', 'IOT','tech terms']
-        a.navbar-item(href="/#"+ escape(val)) #{val}
+        a.navbar-item(href="#"+ escape(val)) #{val}
       div(class="navbar-item has-dropdown is-hoverable")
         a(class="navbar-link") More
         div.navbar-dropdown
           each val in ['hello map','About']
-            a.navbar-item(href="/#"+escape(val)) #{val}
+            a.navbar-item(href="#"+escape(val)) #{val}
 
   div.navbar-end
-    a.navbar-item(href="/#github-source") github source
+    a.navbar-item(href="#github-source") github source
