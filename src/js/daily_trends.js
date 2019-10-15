@@ -14,25 +14,14 @@ function extract_articles_for_daily_trends ( json_in, num_of_link=99) {
   return out.join('<br>');
 }
 
-function render_small_table ( json_in ) {
-  var content = _.range( Math.min(json_in.length, max_table_row) ).map( idx => {
-    if ( idx > max_table_col ) {
-      return get_table_row( [
-        idx + 1,
-        get_a_href( json_in[idx].title.query, json_in[idx].title.exploreLink ),
-        json_in[idx].formattedTraffic,
-        ( json_in[idx].articles.length ? extract_articles_for_daily_trends( json_in[idx], 3 ) : ''
-        )
-      ], 'hide_row' );
-    } else {
-      return get_table_row( [
-        idx + 1,
-        get_a_href( json_in[idx].title.query, json_in[idx].title.exploreLink ),
-        json_in[idx].formattedTraffic,
-        ( json_in[idx].articles.length ? extract_articles_for_daily_trends( json_in[idx], 3 ) : ''
-        )
-      ] );
-    };
+function render_small_table( json_in ) {
+  var content = _.range( Math.min( json_in.length, max_table_row ) ).map( idx => {
+    return get_table_row( [
+      idx + 1,
+      get_a_href( json_in[ idx ].title.query, json_in[ idx ].title.exploreLink, table_link_class ),
+      json_in[ idx ].formattedTraffic,
+      ( json_in[ idx ].articles.length ? extract_articles_for_daily_trends( json_in[ idx ], 3 ) : '' )
+    ] );
   } );
 
   return get_table(

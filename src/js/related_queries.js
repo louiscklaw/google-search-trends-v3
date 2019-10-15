@@ -2,12 +2,13 @@
 
 
 function render_related_queries_table ( data_in, max_row=999 ) {
-  var content = _.range( Math.min(data_in.length, max_row) ).map( idx => {
-    if ( idx > 4 ) {
-      return get_table_row( [idx + 1, data_in[idx][0], data_in[idx][1]], 'hide_row' );
-    } else {
-      return get_table_row( [idx + 1, data_in[idx][0], data_in[idx][1]] );
-    }
+  var content = _.range( Math.min( data_in.length, max_row ) ).map( idx => {
+    console.log( data_in[idx][1] );
+    return get_table_row( [
+      idx + 1,
+      data_in[idx][0],
+      data_in[idx][1]
+    ] );
   } )
   return get_table(
     get_thead( [ 'rank', 'value', 'queries' ] ),
@@ -18,7 +19,7 @@ function render_related_queries_table ( data_in, max_row=999 ) {
 
 function extract_ranked_keyword ( json_in ) {
   return json_in.default.rankedList[0].rankedKeyword.map( x => {
-    return [x.value, get_a_href( x.query, x.link )];
+    return [x.value, get_a_href( x.query, x.link , table_link_class )];
   });
 }
 

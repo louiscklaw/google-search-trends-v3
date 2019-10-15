@@ -1,5 +1,7 @@
 include trend_samples.pug
 
+mixin page_title(title)
+  div(data-title= title)
 
 mixin helloworld
   p helloworld
@@ -8,11 +10,13 @@ mixin helloworld
 mixin dailyTrendResult(params)
   p !{JSON.stringify(apple)}
 
-mixin dailyTrend(apple, card_topic)
+mixin dailyTrend(apple, geo_in)
   - var search_id = 'search_'+Math.round(Math.random()*99999)
   .cards.related_topics#related_queries_php(data-card-category="#programming")
     .card_content
-      .card_topic #{card_topic}
+      .card_topic
+        a.button.is-light(href="https://trends.google.com/trends/trendingsearches/daily?geo="+geo_in target="_blank").
+          Daily trend of #{geo_in} <i class="fas fa-external-link-alt"></i>
         div(id=search_id)
         script.
           daily_trends( '#'+ '!{search_id}' ,!{JSON.stringify(apple)});
@@ -21,7 +25,7 @@ mixin dailyTrendOfLoc(geo_in)
   +dailyTrend({
       trendDate: new Date(),
       geo: geo_in,
-    }, 'daily trend of '+ geo_in)
+    }, geo_in)
 
 mixin dailyTrendOfUS
   +dailyTrendOfLoc('US')
@@ -120,10 +124,10 @@ mixin chart_vector_map(topic, params)
 
 
 
-mixin related_queries(topic, params, max_row)
+mixin related_queries(queries, params, max_row)
   - var _id = 'search_'+Math.round(Math.random()*99999)
   .cards
-    h2.card_topic= topic
+    h2.card_topic #{queries}
     .card_body
       div(id=_id)
       script.

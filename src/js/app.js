@@ -29,7 +29,13 @@ function update_highlight_button( hash_in ) {
   } )
 }
 
+function update_title () {
+  return get_ele( 'title' ).innerHTML = get_ele( '[data-title]' ).getAttribute( 'data-title' );
+}
+
 function update_cards_placeholder ( content, cb ) {
+
+
   get_ele( '.cards_placeholder' ).innerHTML = content;
   return cb();
 }
@@ -40,9 +46,13 @@ function fetch_get_html_content ( uri_in ) {
   fetch_get( '/'+uri_in )
     .then( res => res.text() )
     .then( html_content => update_cards_placeholder( html_content, () => {
+      // run script after load
       get_eles( '.cards_placeholder script' ).forEach( x => {
         eval( x.textContent );
-      })
+      } )
+
+      // update page title after load
+      update_title();
     }) );
 }
 

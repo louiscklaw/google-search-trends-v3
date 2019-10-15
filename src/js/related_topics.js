@@ -16,7 +16,7 @@ function render_related_topics_table ( data_in, max_row=999 ) {
 function extract_ranked_topics_data ( json_in ) {
   console.log( json_in );
   return json_in.default.rankedList[0].rankedKeyword.map( x => {
-    return [x.value, get_a_href( x.topic.title, x.link )];
+    return [x.value, get_a_href( x.topic.title, x.link, table_link_class )];
   } );
 }
 

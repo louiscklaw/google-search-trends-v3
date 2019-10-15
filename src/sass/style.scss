@@ -21,6 +21,17 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
+.card_topic {
+  svg{
+    padding: 2px;
+    margin-left: 5px;
+  }
+}
+
+.cards_placeholder {
+  min-height: 100vh;
+}
+
 .empty_page {
   text-align: center;
 }

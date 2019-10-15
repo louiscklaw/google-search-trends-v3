@@ -10,3 +10,9 @@ section.section
           dayBack: 365 * 1,
           resolution: 'COUNTRY'
         }, 'world-map')
+      .column.is-one-quarter
+        +dailyTrendOfUS
+      .column.is-one-quarter
+        +related_topics('PHP'+' related topics',{keyword: 'PHP'}, 10)
+      .column.is-one-quarter
+        +related_queries('PHP'+' related queries',{keyword: 'PHP'}, 10)

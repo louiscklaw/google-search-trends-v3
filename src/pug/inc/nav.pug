@@ -15,9 +15,9 @@ nav(class="navbar is-fixed-top is-transparent" role="navigation" aria-label="mai
       each val in ['Helloworld', 'Programming language','lihkg vs hkgolden','jobs ads', 'IOT','tech terms']
         a.navbar-item(href="/#"+ escape(val)) #{val}
       div(class="navbar-item has-dropdown is-hoverable")
-        a(class="navbar-link") 更多
+        a(class="navbar-link") More
         div.navbar-dropdown
-          each val in ['About','hello map','contact', 'report an issue','todo list']
+          each val in ['hello map','About']
             a.navbar-item(href="/#"+escape(val)) #{val}
 
   div.navbar-end

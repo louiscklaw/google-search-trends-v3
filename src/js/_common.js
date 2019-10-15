@@ -60,8 +60,13 @@ function get_non_google_a_href ( text, href ) {
   return '<a href="' + href + '" target="_blank">' + text + '</a>';
 }
 
-function get_a_href( text, href ) {
-  return '<a href="' + get_google_trend_href( href ) + '" target="_blank">' + text + '</a>';
+function get_a_href ( text, href, a_class = "" ) {
+  if ( a_class != '' ) {
+    return '<a class="'+ a_class +'" href="' + get_google_trend_href( href ) + '" target="_blank">' + text + '</a>';
+  } else {
+    return '<a  href="' + get_google_trend_href( href ) + '" target="_blank">' + text + '</a>';
+
+  }
 }
 
 function get_thead ( cols_name ) {
@@ -95,7 +100,7 @@ function get_table_row ( row_content, row_class='' ) {
       ].join( ' ' )
       );
     } else {
-      return encap_td( row_content[idx], 'td_' + idx );
+    return encap_td( row_content[idx], 'td_' + idx );
     }
   });
   return encap_tr(content.join(''), row_class);

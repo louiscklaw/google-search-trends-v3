@@ -15,3 +15,5 @@ var DATA_CARD_CATEGORY = 'data-card-category';
 
 var max_table_row = 10;
 var max_table_col = 3;
+
+var table_link_class = 'button is-white is-small';

@@ -9142,6 +9142,15 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+.card_topic svg {
+  padding: 2px;
+  margin-left: 5px;
+}
+
+.cards_placeholder {
+  min-height: 100vh;
+}
+
 .empty_page {
   text-align: center;
 }

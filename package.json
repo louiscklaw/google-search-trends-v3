@@ -21,7 +21,7 @@
   },
   "scripts": {
     "test_server": "set RUN_ENV=DEBUG && nodemon --delay 0.3 server.js",
-    "gulp": "nodemon -w ./src --ext '*.*' --exec gulp"
+    "gulp_regen": "nodemon -w ./src --ext '*.*' --exec gulp"
   },
   "repository": {
     "type": "git",
