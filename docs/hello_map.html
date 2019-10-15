@@ -1,4 +1,4 @@
-<section class="section"><div class="container"><div class="columns"><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">test heat map</h2><div class="map_container"><div id="search_40585" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+<section class="section"><div class="container"><div class="columns"><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">test heat map</h2><div class="map_container"><div id="search_8282" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"apple","dayBack":365,"resolution":"COUNTRY"}
 } )
@@ -11,7 +11,7 @@
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_13227" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_39555" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -35,10 +35,10 @@
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
 
-  var map_search_40585 = jQuery( '#' + 'search_40585' );
-  map_search_40585.vectorMap(jqvmap_config );
+  var map_search_8282 = jQuery( '#' + 'search_8282' );
+  map_search_8282.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_13227" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards related_topics" id="related_queries_php" data-card-category="#programming"><div class="card_content"><div class="card_topic"><a class="button is-light" href="https://trends.google.com/trends/trendingsearches/daily?geo=US" target="_blank">Daily trend of US <i class="fas fa-external-link-alt"></i></a><div id="search_40059"></div><script>daily_trends( '#'+ 'search_40059' ,{"trendDate":"2019-10-15T11:13:33.950Z","geo":"US"});
-</script></div></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">PHP related topics</h2><div class="card_body"><div id="search_47108"></div><script>related_topics( '#'+'search_47108', {"keyword":"PHP"}, '10' );
-</script></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">PHP related queries</h2><div class="card_body"><div id="search_35459"></div><script>related_queries( '#'+'search_35459', {"keyword":"PHP"}, '10' );
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_39555" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards related_topics" id="related_queries_php" data-card-category="#programming"><div class="card_content"><div class="card_topic"><a class="button is-light" href="https://trends.google.com/trends/trendingsearches/daily?geo=US" target="_blank">Daily trend of US <i class="fas fa-external-link-alt"></i></a><div id="search_36125"></div><script>daily_trends( '#'+ 'search_36125' ,{"trendDate":"2019-10-15T11:18:57.920Z","geo":"US"});
+</script></div></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">PHP related topics</h2><div class="card_body"><div id="search_26850"></div><script>related_topics( '#'+'search_26850', {"keyword":"PHP"}, '10' );
+</script></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">PHP related queries</h2><div class="card_body"><div id="search_96857"></div><script>related_queries( '#'+'search_96857', {"keyword":"PHP"}, '10' );
 </script></div></div></div></div></div></section>

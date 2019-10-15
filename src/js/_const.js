@@ -1,7 +1,10 @@
 // _const.js
 
 const DEFAULT_HASH = '#home';
-const API_BASE_URL = 'http://localhost:8082';
+const localhost_API = 'http://localhost:8082';
+const API_BASE_URL = 'https://us-central1-louislabs-com.cloudfunctions.net/google-trends-crawler';
+
+
 
 const Q_DAILY_TRENDS = "dailyTrends";
 const Q_INTEREST_OVER_TIME = "interestOverTime";
