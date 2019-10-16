@@ -21,7 +21,12 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
-.card_topic {
+.google_search_magnifier {
+  text-decoration: none;
+  color: black;
+}
+
+.card_body {
   svg{
     padding: 2px;
     margin-left: 5px;

@@ -31,6 +31,10 @@ function get_google_trend_href( href_in ) {
   return 'https://trends.google.com' + href_in;
 }
 
+function get_google_search_href ( text_to_search ) {
+  return 'https://www.google.com/search?q=' + text_to_search
+}
+
 function encap ( content, encap, encap_class='' ) {
   if ( encap_class != '' ) {
     return '<' + encap + ' class="'+encap_class+'">' + content + '</' + encap + '>';
@@ -60,12 +64,19 @@ function get_non_google_a_href ( text, href ) {
   return '<a href="' + href + '" target="_blank">' + text + '</a>';
 }
 
-function get_a_href ( text, href, a_class = "" ) {
+function get_search_a_href ( text, text_to_search, a_class = "", rel="" ) {
+  if ( a_class != '' ) {
+    return '<a class="'+ a_class +'" href="' + get_google_search_href( text_to_search ) + '" target="_blank">' + text + '</a>';
+  } else {
+    return '<a  href="' + get_google_search_href( text_to_search ) + '" target="_blank">' + text + '</a>';
+  }
+}
+
+function get_trend_a_href ( text, href, a_class = "" ) {
   if ( a_class != '' ) {
     return '<a class="'+ a_class +'" href="' + get_google_trend_href( href ) + '" target="_blank">' + text + '</a>';
   } else {
     return '<a  href="' + get_google_trend_href( href ) + '" target="_blank">' + text + '</a>';
-
   }
 }
 
@@ -74,7 +85,7 @@ function get_thead ( cols_name ) {
   return encap_thead(
     encap_tr(
       _.range( cols_name.length ).map( idx => {
-        if ( idx > 2 ) {
+        if ( idx > max_column ) {
           return encap_td( cols_name[idx], 'hide_column' );
         } else {
           return encap_td( cols_name[idx] );
@@ -93,7 +104,7 @@ function get_table_row ( row_content, row_class='' ) {
 
   // var content = row_cotnent.map( x => encap_td(x,'test') );
   var content = _.range( row_content.length ).map( idx =>{
-    if ( idx > 2 ) {
+    if ( idx > max_column ) {
       return encap_td( row_content[idx], [
         'td_' + idx,
         'hide_column'

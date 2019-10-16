@@ -9142,7 +9142,12 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
-.card_topic svg {
+.google_search_magnifier {
+  text-decoration: none;
+  color: black;
+}
+
+.card_body svg {
   padding: 2px;
   margin-left: 5px;
 }

@@ -3,15 +3,16 @@
 
 function render_related_queries_table ( data_in, max_row=999 ) {
   var content = _.range( Math.min( data_in.length, max_row ) ).map( idx => {
-    console.log( data_in[idx][1] );
+    var queries = data_in[idx][1];
+    var value = data_in[idx][0];
     return get_table_row( [
       idx + 1,
-      data_in[idx][0],
-      data_in[idx][1]
+      queries,
+      value+get_google_search_magnifier('apple'),
     ] );
   } )
   return get_table(
-    get_thead( [ 'rank', 'value', 'queries' ] ),
+    get_thead( related_queries_column ),
     content.join( '' )
   );
 }
@@ -19,7 +20,7 @@ function render_related_queries_table ( data_in, max_row=999 ) {
 
 function extract_ranked_keyword ( json_in ) {
   return json_in.default.rankedList[0].rankedKeyword.map( x => {
-    return [x.value, get_a_href( x.query, x.link , table_link_class )];
+    return [x.value, get_trend_a_href( x.query, x.link , table_link_class )];
   });
 }
 

@@ -13,13 +13,14 @@ mixin dailyTrendResult(params)
 mixin dailyTrend(apple, geo_in)
   - var search_id = 'search_'+Math.round(Math.random()*99999)
   .cards.related_topics#related_queries_php(data-card-category="#programming")
-    .card_content
-      .card_topic
-        a.button.is-light(href="https://trends.google.com/trends/trendingsearches/daily?geo="+geo_in target="_blank").
-          Daily trend of #{geo_in} <i class="fas fa-external-link-alt"></i>
-        div(id=search_id)
-        script.
-          daily_trends( '#'+ '!{search_id}' ,!{JSON.stringify(apple)});
+    //- .card_content
+    .card_topic
+    .card_body
+      a.button.is-light(href="https://trends.google.com/trends/trendingsearches/daily?geo="+geo_in target="_blank").
+        Daily trend of #{geo_in} <i class="fas fa-external-link-alt"></i>
+      div(id=search_id)
+      script.
+        daily_trends( '#'+ '!{search_id}' ,!{JSON.stringify(apple)});
 
 mixin dailyTrendOfLoc(geo_in)
   +dailyTrend({

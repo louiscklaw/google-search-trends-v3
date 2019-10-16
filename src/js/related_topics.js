@@ -1,14 +1,18 @@
 
 function render_related_topics_table ( data_in, max_row=999 ) {
   var content = _.range( Math.min( data_in.length, max_row ) ).map( idx => {
-    if ( idx > 4 ) {
-      return get_table_row( [idx + 1, data_in[idx][0], data_in[idx][1]], 'hide_row' );
-    } else {
-      return get_table_row( [idx + 1, data_in[idx][0], data_in[idx][1]] );
-    }
+    var value = data_in[idx][0];
+    var topic_link = data_in[idx][1];
+    var topic_text = data_in[idx][2];
+    return get_table_row( [
+      idx + 1,
+      topic_link,
+      value+get_google_search_magnifier(topic_text),
+
+    ] );
   } )
   return get_table(
-    get_thead( [ 'rank', 'value', 'topics' ] ),
+    get_thead( [ 'rank', 'topics', 'value' ] ),
     content.join( '' )
   );
 }
@@ -16,7 +20,11 @@ function render_related_topics_table ( data_in, max_row=999 ) {
 function extract_ranked_topics_data ( json_in ) {
   console.log( json_in );
   return json_in.default.rankedList[0].rankedKeyword.map( x => {
-    return [x.value, get_a_href( x.topic.title, x.link, table_link_class )];
+    return [
+      x.value,
+      get_trend_a_href( x.topic.title, x.link, table_link_class ),
+      x.topic.title
+    ];
   } );
 }
 
