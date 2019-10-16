@@ -43,7 +43,7 @@ function update_cards_placeholder ( content, cb ) {
 function fetch_get_html_content ( uri_in ) {
   console.log( 'fetch-new-page' );
   console.log( uri_in );
-  fetch_get( '/'+uri_in )
+  fetch_get( uri_in )
     .then( res => res.text() )
     .then( html_content => update_cards_placeholder( html_content, () => {
       // run script after load
