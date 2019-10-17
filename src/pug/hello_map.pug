@@ -3,7 +3,8 @@ include inc/mixins.pug
 
 section.section
   .container
-    .columns
+    h3.title.is-5 test title
+    .columns.is-multiline
       .column.is-one-quarter
         +chart_vector_map( 'test heat map', {
           keyword: 'apple',
@@ -16,3 +17,10 @@ section.section
         +related_topics('PHP'+' related topics',{keyword: 'PHP'}, 10)
       .column.is-one-quarter
         +related_queries('PHP'+' related queries',{keyword: 'PHP'}, 10)
+      .column.is-one-quarter
+        each year in [10]
+          +chart_interest_over_time('language compare '+year+' year', {
+            geo: 'HK',
+            keyword: ['PHP','python','javascript','golang','RUST'],
+            dayBack: 365 * year
+          })

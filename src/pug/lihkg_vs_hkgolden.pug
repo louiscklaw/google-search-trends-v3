@@ -1,5 +1,34 @@
+include inc/mixins.pug
+
+- var forum_list = ['lihkg','hkgolden','hkepc','批踢踢','uwants']
+
 section.section.empty_page
   .container
+    h3.title.is-5 forum populatity (time against country)
     .columns
-      .column
-        h3.h3.title.is-3 reserved for lihkg_vs_hkgolden
+      each location in ['HK','TW','US','']
+        .column.is-one-quarter
+          if location != ''
+            +chart_interest_over_time('forum compare (3 year, '+ location +')', {
+              geo: location,
+              keyword: forum_list,
+              dayBack: 365 * 3
+            })
+          else
+            +chart_interest_over_time('forum compare (3 year, world)', {
+              keyword: forum_list,
+              dayBack: 365 * 3
+            })
+
+section.section
+  .container
+    h3.title.is-5 forum populatity over country
+    each years in [1,5]
+      .columns
+        each forum in forum_list
+          .column.is-one-fifth
+            +chart_vector_map( forum + ' heat by region ('+years+' year)', {
+              keyword: forum,
+              dayBack: 365 * years,
+              resolution: 'COUNTRY'
+            }, 'world-map')

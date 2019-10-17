@@ -9142,6 +9142,10 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+.chart_title {
+  font-size: 0.8em;
+}
+
 .google_search_magnifier {
   text-decoration: none;
   color: black;

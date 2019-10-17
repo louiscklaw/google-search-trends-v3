@@ -59,3 +59,40 @@ function daily_trends( sel_in, params ) {
 
     } );
 }
+function get_max_from_array ( array_in ) {
+  return Math.max( ...array_in );
+}
+function get_min_from_array ( array_in ) {
+  return Math.min( ...array_in );
+}
+
+function update_chart_info_table ( table_id, data_name, data_value ) {
+  console.log( 'update chart info table' );
+  var average_value = data_value.default.averages;
+  var timeline_data = data_value.default.timelineData;
+
+
+  var temp = _.range( data_name.length ).map( idx => {
+
+    var value_by_name = timeline_data
+      .map( x => {
+        console.log( timeline_data[0] );
+        return timeline_data[x].value[idx];
+      } );
+
+    console.log( value_by_name );
+    return encap_html_tag( [
+      encap_html_tag( data_name[idx], 'td' ),
+      encap_html_tag( average_value[idx], 'td' ),
+      encap_html_tag(get_max_from_array( value_by_name ),'td'),
+      encap_html_tag(get_min_from_array(value_by_name),'td')
+    ].join(''),
+      'tr' );
+  })
+
+  console.log( temp );
+  get_ele( table_id ).innerHTML = get_table(
+    get_thead( daily_trend_chart_column ),
+    temp.join( '' )
+  );
+}

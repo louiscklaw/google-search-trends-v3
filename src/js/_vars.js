@@ -22,3 +22,4 @@ var max_column = 2;
 
 var related_topics_column = ['rank', 'topics', 'value'];
 var related_queries_column = ['rank', 'queries', 'value'];
+var daily_trend_chart_column = ['item', 'Avg value', 'Max', 'Min'];

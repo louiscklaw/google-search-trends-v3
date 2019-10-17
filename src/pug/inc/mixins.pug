@@ -47,14 +47,16 @@ mixin trending_search(topic, params)
     } );
 
 mixin chart_interest_over_time(topic, params)
-  - var _id = 'search_'+Math.round(Math.random()*99999)
+  - var _id = '_'+Math.round(Math.random()*99999)
+  - var _chart_id = 'chart_'+_id
+  - var _info_table_id = 'table_'+_id
   .cards
+    h3.chart_title.is-6.card_topic #{topic}
     .card_body
       .chart_container
-        canvas(id=_id)
-      h3 #{topic}
+        canvas(id=_chart_id)
       .content
-        +sample_table([1,2,3])
+        +chart_info_table(_info_table_id)
 
     script.
       //- keywords_to_search = [ 'Valentines Day' ];
@@ -64,7 +66,9 @@ mixin chart_interest_over_time(topic, params)
         } )
         .then( res => res.json() )
         .then( ( json ) => {
-          create_chart( "#"+"!{_id}", !{JSON.stringify(params.keyword)} , json );
+          create_chart( "#"+"!{_chart_id}", !{JSON.stringify(params.keyword)} , json );
+
+          update_chart_info_table("#"+"!{_info_table_id}", !{JSON.stringify(params.keyword)} , json)
         } );
 
 
@@ -148,3 +152,6 @@ mixin table_placeholder(table_id)
 
 mixin table_top_3_country(table_id)
   table.table.top_3_country(id=table_id style='text-align: center;')
+
+mixin chart_info_table(table_id)
+  table.table.chart_info_table(id=table_id)
