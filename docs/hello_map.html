@@ -1,4 +1,4 @@
-<section class="section"><div class="container"><h3 class="title is-5">test title</h3><div class="columns is-multiline"><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">test heat map</h2><div class="map_container"><div id="search_60727" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+<section class="section"><div class="container"><h3 class="title is-5">test title</h3><div class="columns is-multiline"><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">test heat map</h2><div class="map_container"><div id="search_81621" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"apple","dayBack":365,"resolution":"COUNTRY"}
 } )
@@ -11,7 +11,7 @@
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_64245" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_19053" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -35,22 +35,22 @@
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
 
-  var map_search_60727 = jQuery( '#' + 'search_60727' );
-  map_search_60727.vectorMap(jqvmap_config );
+  var map_search_81621 = jQuery( '#' + 'search_81621' );
+  map_search_81621.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_64245" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards related_topics" id="related_queries_php" data-card-category="#programming"><div class="card_topic"></div><div class="card_body"><a class="button is-light" href="https://trends.google.com/trends/trendingsearches/daily?geo=US" target="_blank">Daily trend ovef US <i class="fas fa-external-link-alt"></i></a><div id="search_13045"></div><script>daily_trends( '#'+ 'search_13045' ,{"trendDate":"2019-10-17T11:16:21.682Z","geo":"US"});
-</script></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">PHP related topics</h2><div class="card_body"><div id="search_35262"></div><script>related_topics( '#'+'search_35262', {"keyword":"PHP"}, '10' );
-</script></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">PHP related queries</h2><div class="card_body"><div id="search_32332"></div><script>related_queries( '#'+'search_32332', {"keyword":"PHP"}, '10' );
-</script></div></div></div><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">language compare 10 year</h3><div class="card_body"><div class="chart_container"><canvas id="chart__84435"></canvas></div><div class="content"><table class="table chart_info_table" id="table__84435"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_19053" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards related_topics" id="related_queries_php" data-card-category="#programming"><div class="card_topic"></div><div class="card_body"><a class="button is-light" href="https://trends.google.com/trends/trendingsearches/daily?geo=US" target="_blank">Daily trend ovef US <i class="fas fa-external-link-alt"></i></a><div id="search_1723"></div><script>daily_trends( '#'+ 'search_1723' ,{"trendDate":"2019-10-17T12:04:33.353Z","geo":"US"});
+</script></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">PHP related topics</h2><div class="card_body"><div id="search_66690"></div><script>related_topics( '#'+'search_66690', {"keyword":"PHP"}, '10' );
+</script></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">PHP related queries</h2><div class="card_body"><div id="search_32975"></div><script>related_queries( '#'+'search_32975', {"keyword":"PHP"}, '10' );
+</script></div></div></div><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">language compare 10 year</h3><div class="card_body"><div class="chart_container"><canvas id="chart__56088"></canvas></div><div class="content"><table class="table chart_info_table" id="table__56088"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
 fetch_post_request( {
     q: Q_INTEREST_OVER_TIME,
     param: {"geo":"HK","keyword":["PHP","python","javascript","golang","RUST"],"dayBack":3650}
   } )
   .then( res => res.json() )
   .then( ( json ) => {
-    create_chart( "#"+"chart__84435", ["PHP","python","javascript","golang","RUST"] , json );
+    create_chart( "#"+"chart__56088", ["PHP","python","javascript","golang","RUST"] , json );
 
-    update_chart_info_table("#"+"table__84435", ["PHP","python","javascript","golang","RUST"] , json)
+    update_chart_info_table("#"+"table__56088", ["PHP","python","javascript","golang","RUST"] , json)
   } );
 
 </script></div></div></div></div></section>

@@ -31,6 +31,11 @@ $input-shadow: none;
 }
 
 .card_body {
+  a {
+    &:hover{
+      color: blue;
+    }
+  }
   svg{
     padding: 2px;
     margin-left: 5px;

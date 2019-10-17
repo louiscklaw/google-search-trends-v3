@@ -1,0 +1,40 @@
+include inc/mixins.pug
+
+section.section
+  .container
+    .columns
+      .column.is-full
+        h3.title.is-5 search popularity over time
+
+    each location in ['HK','US']
+      .columns
+        each year in [1,5]
+          .column.is-one-quarter
+            +chart_interest_over_time('search popularity over '+year+' year', {
+              geo: location,
+              keyword: [
+                'belt and road'
+              ],
+              dayBack: 365 * year
+            })
+
+        .column.is-half
+          each year in [10]
+            +chart_interest_over_time('search popularity over '+year+' year', {
+              geo: location,
+              keyword: [
+                'belt and road'
+              ],
+              dayBack: 365 * year
+            })
+
+    .columns
+      each year in [1,5,10]
+        .column.is-one-third
+          +chart_vector_map( 'search heat by region ('+year+' year)', {
+            keyword: [
+              'belt and road'
+            ],
+            dayBack: 365 * year,
+            resolution: 'COUNTRY'
+          }, 'world-map')

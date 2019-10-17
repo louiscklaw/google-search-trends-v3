@@ -3,9 +3,12 @@ include inc/mixins.pug
 section.section
   .container
     .columns
+      .column.is-full
+        h3.title.is-5 language popularity over time
+    .columns
       each year in [1,5]
         .column.is-one-quarter
-          +chart_interest_over_time('lang compare '+year+' year', {
+          +time('lang compare '+year+' year', {
             geo: 'HK',
             keyword: ['PHP','python','javascript','golang','RUST'],
             dayBack: 365 * year
@@ -21,6 +24,8 @@ section.section
 
 section.section
   .container
+    .columns
+    h3.title.is-5 language popularity compare by country
     each years in [1,5,10]
       .columns
         each prog_lang in ['PHP','python','Ruby', 'javascript', 'RUST']

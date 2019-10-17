@@ -4,10 +4,8 @@ include inc/mixins.pug
 section.section
   .container
     .columns
-      each loc in ['HK','TW','US','GB']
-        .column.is-one-quarter
-          +dailyTrendOfLoc(loc)
-    .columns
-      each loc in ['FR', 'DE','FI','JP',]
+      .column.is-full hot topics by country
+    .columns.is-multiline
+      each loc in ['HK','TW','US','GB', 'FR', 'DE','FI','JP','SG']
         .column.is-one-quarter
           +dailyTrendOfLoc(loc)

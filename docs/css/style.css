@@ -9151,6 +9151,9 @@ label.panel-block:hover {
   color: black;
 }
 
+.card_body a:hover {
+  color: blue;
+}
 .card_body svg {
   padding: 2px;
   margin-left: 5px;
