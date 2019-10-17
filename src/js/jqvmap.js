@@ -39,13 +39,19 @@ function encap_html_tag ( value, tag ) {
   return '<' + tag + '>' + value + '</' + tag + '>';
 }
 function gen_table_content( map_result_in, top_x ) {
-  return get_top_from_map( map_result_in, top_x ).map( x => {
-    var locations = x[ 1 ].map( x => cc_conv[x.toLowerCase()]).join( '<br>' );
-    return encap_html_tag(
-      encap_html_tag( x[ 0 ], 'td' ) + encap_html_tag( locations, 'td' ),
-      'tr'
-    );
-  } );
+  return get_top_from_map( map_result_in, top_x )
+    // filter out if 0 appears in top 3 country
+    .filter(x => x[0] > 0 )
+    .map( x => {
+      var value = x[0];
+      var countries = x[1];
+
+      var countries_html = countries.map( x => cc_conv[ x.toLowerCase() ] ).join( '<br>' );
+      return encap_html_tag(
+        encap_html_tag( value, 'td' ) + encap_html_tag( countries_html, 'td' ),
+        'tr'
+      );
+    } );
 }
 
 function gen_table_column_header ( col_names_in ) {

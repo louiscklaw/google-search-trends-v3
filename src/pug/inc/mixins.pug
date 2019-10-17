@@ -1,5 +1,8 @@
 include trend_samples.pug
 
+- var APAC_LIST = ['HK','CN','TW','JP']
+- var iot_manufacturer = ['quectel','ublox','simcom','telit','sierrawireless']
+
 mixin page_title(title)
   div(data-title= title)
 
@@ -17,7 +20,7 @@ mixin dailyTrend(apple, geo_in)
     .card_topic
     .card_body
       a.button.is-light(href="https://trends.google.com/trends/trendingsearches/daily?geo="+geo_in target="_blank").
-        Daily trend of #{geo_in} <i class="fas fa-external-link-alt"></i>
+        Daily trend ovef #{geo_in} <i class="fas fa-external-link-alt"></i>
       div(id=search_id)
       script.
         daily_trends( '#'+ '!{search_id}' ,!{JSON.stringify(apple)});

@@ -1,5 +1,57 @@
+include inc/mixins.pug
+
 section.section.empty_page
   .container
+
     .columns
-      .column
-        h3.h3.title.is-3 reserved for IOT
+      .column.is-full
+        h3.title.is-5 IOT as a search term over the world
+
+    .columns
+      each location in ['']
+        .column.is-full
+          +chart_interest_over_time('forum compare (10 year, world)', {
+            keyword: ['IOT'],
+            dayBack: 365 * 10
+          })
+
+    .columns
+      .column.is-full
+        h3.title.is-5 IOT as a search term breakdown by country
+
+    .columns
+      each location in ['HK','CN','TW', 'US']
+        .column.is-one-quarter
+          +chart_interest_over_time('search term breakdown (10 year, '+location+'​)', {
+            geo: location,
+            keyword: ['IOT'],
+            dayBack: 365 * 10
+          })
+
+section.section
+  .container
+    .columns
+      each year in [10]
+        .column.is-full
+          h3.title.is-5 IOT manufacturer over 10 year
+          +chart_interest_over_time('IOT manufacturer ('+year+' year​)', {
+            keyword: iot_manufacturer,
+            dayBack: 365 * year
+          })
+
+section.section
+  .container
+    .columns
+      .column.is-full
+        h3.title.is-5 IOT manufacturer breakdown by country
+
+section.section
+  .container
+      .columns.is-multiline
+        each manufacturer in iot_manufacturer
+          .column.is-one-fifth
+            +chart_vector_map( manufacturer + ' heat by region (3 year)', {
+              keyword: manufacturer,
+              dayBack: 365 * 3,
+              resolution: 'COUNTRY'
+            }, 'world-map')

@@ -1,5 +1,29 @@
+include inc/mixins.pug
+
+- var tech_terms = ['Artificial intelligence', 'Internet of things', 'Biometrics', 'Blockchain','Robotics']
+
 section.section.empty_page
   .container
+
     .columns
-      .column
-        h3.h3.title.is-3 reserved for tech_terms
+      .column.is-full
+        h3.title.is-5 tech terms search over the world
+
+    .columns.is-multiline
+      each year in [1,3,5, 10]
+        .column.is-half
+          +chart_interest_over_time('tech terms search popularity ('+year+' year, world)', {
+            keyword: tech_terms,
+            dayBack: 365 * year
+          })
+
+section.section
+  .container
+      .columns.is-multiline
+        each terms in tech_terms
+          .column.is-one-fifth
+            +chart_vector_map( terms + ' heat by region (3 year)', {
+              keyword: terms,
+              dayBack: 365 * 3,
+              resolution: 'COUNTRY'
+            }, 'world-map')
