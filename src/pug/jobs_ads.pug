@@ -27,7 +27,7 @@ section.section
       .columns
         each forum in forum_list
           .column.is-one-fifth
-            +chart_vector_map( forum + ' heat by region ('+years+' year)', {
+            +chart_vector_map( '"'+forum + '" heat by region ('+years+' year)', {
               keyword: forum,
               dayBack: 365 * years,
               resolution: 'COUNTRY'

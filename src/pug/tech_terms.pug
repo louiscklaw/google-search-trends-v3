@@ -22,7 +22,7 @@ section.section
       .columns.is-multiline
         each terms in tech_terms
           .column.is-one-fifth
-            +chart_vector_map( terms + ' heat by region (3 year)', {
+            +chart_vector_map( '"'+terms + '" heat by region (3 year)', {
               keyword: terms,
               dayBack: 365 * 3,
               resolution: 'COUNTRY'

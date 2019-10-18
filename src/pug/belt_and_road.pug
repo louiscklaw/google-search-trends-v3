@@ -10,7 +10,7 @@ section.section
       .columns
         each year in [1,5]
           .column.is-one-quarter
-            +chart_interest_over_time('search popularity over '+year+' year', {
+            +chart_interest_over_time('search popularity over '+year+' year('+location+')', {
               geo: location,
               keyword: [
                 'belt and road'
@@ -20,7 +20,7 @@ section.section
 
         .column.is-half
           each year in [10]
-            +chart_interest_over_time('search popularity over '+year+' year', {
+            +chart_interest_over_time('search popularity over '+year+' year('+location+')', {
               geo: location,
               keyword: [
                 'belt and road'

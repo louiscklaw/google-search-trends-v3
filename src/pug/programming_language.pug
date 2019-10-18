@@ -30,7 +30,7 @@ section.section
       .columns
         each prog_lang in ['PHP','python','Ruby', 'javascript', 'RUST']
           .column.is-one-fifth
-            +chart_vector_map( prog_lang + ' heat by region ('+years+' year)', {
+            +chart_vector_map( '"'+prog_lang + '" heat by region ('+years+' year)', {
               keyword: prog_lang,
               dayBack: 365 * years,
               resolution: 'COUNTRY'

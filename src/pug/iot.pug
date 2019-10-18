@@ -48,7 +48,7 @@ section.section
     .columns.is-multiline
       each manufacturer in iot_manufacturer
         .column.is-one-fifth
-          +chart_vector_map( manufacturer + ' heat by region (3 year)', {
+          +chart_vector_map( '"'+ manufacturer + '" heat by region (3 year)', {
             keyword: manufacturer,
             dayBack: 365 * 3,
             resolution: 'COUNTRY'
