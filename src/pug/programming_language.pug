@@ -8,7 +8,7 @@ section.section
     .columns
       each year in [1,5]
         .column.is-one-quarter
-          +time('lang compare '+year+' year', {
+          +chart_interest_over_time('lang compare '+year+' year', {
             geo: 'HK',
             keyword: ['PHP','python','javascript','golang','RUST'],
             dayBack: 365 * year

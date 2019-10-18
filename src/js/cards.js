@@ -148,7 +148,8 @@ function create_chart ( chart_id_sel_in, keywords_in, data_json ) {
           //  backgroundColor: CHART_COLORS[x][0].replace( '1.0', '0.1' ),
           //  borderColor: CHART_COLORS[x][0],
           //  data: extract_chart_data( data_json, x ),
-          //}
+          //
+        }
         else {
           return {
             label: keywords_in[x],
@@ -157,11 +158,11 @@ function create_chart ( chart_id_sel_in, keywords_in, data_json ) {
             data: extract_chart_data( data_json, x ),
           }
         }
-      }
       } )
-    },
-    options: {
-      maintainAspectRatio: false
+      ,
+      options: {
+        maintainAspectRatio: false
+      }
     }
   } );
 }
