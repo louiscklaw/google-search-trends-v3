@@ -56,7 +56,7 @@ mixin chart_interest_over_time(topic, params)
   .cards
     h3.chart_title.is-6.card_topic #{topic}
     .card_body
-      .chart_container
+      .chart_container()
         canvas(id=_chart_id)
       .content
         +chart_info_table(_info_table_id)

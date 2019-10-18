@@ -158,12 +158,11 @@ function create_chart ( chart_id_sel_in, keywords_in, data_json ) {
             data: extract_chart_data( data_json, x ),
           }
         }
-      } )
-      ,
+      } ),
+    },
       options: {
         maintainAspectRatio: false
       }
-    }
   } );
 }
 
