@@ -1,14 +1,6 @@
 // jqvmap.js
 
-// var max = 0,
-//     min = Number.MAX_VALUE,
-//     cc,
-//     startColor = [200, 238, 255],
-//     endColor = [0, 100, 145],
-//     colors = {},
-//     hex;
-
-var LABEL_COUNTRY_VALUE = 'Value';
+var LABEL_COUNTRY_VALUE = 'Ranking';
 var LABEL_COUNTRY_NAME = 'Country';
 
 function get_top_x_location ( map_result_in, value_wanted ) {

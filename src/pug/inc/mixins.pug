@@ -105,8 +105,8 @@ mixin chart_vector_map(topic, params)
 
           var jqvmap_config = {
             map: 'world_en',
-            backgroundColor: 'rgba(189, 195, 199,0.1)',
-            hoverColor: 'rgba(211, 84, 0,1.0)',
+            backgroundColor: background_color,
+            hoverColor: hover_color,
             enableZoom: false,
             onLabelShow: function ( event, label, code ) {
 
@@ -119,7 +119,7 @@ mixin chart_vector_map(topic, params)
           }
 
           jqvmap_config['colors']= calc_colors_for_jqvmap(
-            result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+            result, min_color, max_color );
 
           var map_!{_id} = jQuery( '#' + '!{_id}' );
           map_!{_id}.vectorMap(jqvmap_config );

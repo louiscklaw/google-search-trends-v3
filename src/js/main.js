@@ -1,5 +1,11 @@
 // app.js
 
+function debug_log ( text_in ) {
+  if ( debug ) {
+    console.log( text_in );
+  }
+}
+
 function dailyTrendResult () {
   document.querySelector( "#dailyTrendResult" ).innerHTML = 'test apple';
 }
@@ -30,7 +36,9 @@ function update_highlight_button( hash_in ) {
 }
 
 function update_title () {
-  return get_ele( 'title' ).innerHTML = get_ele( '[data-title]' ).getAttribute( 'data-title' );
+  debug_log( 'update_title' );
+  debug_log( get_ele( '[data-title]' ).getAttribute( 'data-title' ) );
+  get_ele( 'title' ).innerHTML = get_ele( '[data-title]' ).getAttribute( 'data-title' );
 }
 
 function update_cards_placeholder ( content, cb ) {
@@ -42,10 +50,13 @@ function update_cards_placeholder ( content, cb ) {
 
 function fetch_get_html_content ( uri_in ) {
   console.log( 'fetch-new-page' );
-  console.log( uri_in );
   fetch_get( uri_in )
-    .then( res => res.text() )
+    .then( res => {
+      return res.text();
+    } )
     .then( html_content => update_cards_placeholder( html_content, () => {
+      console.log( html_content );
+
       // run script after load
       get_eles( '.cards_placeholder script' ).forEach( x => {
         eval( x.textContent );
@@ -53,7 +64,16 @@ function fetch_get_html_content ( uri_in ) {
 
       // update page title after load
       update_title();
-    }) );
+
+    } ) )
+    .then( _ => {
+      setTimeout(() => {
+        window.scrollTo( {
+          top: 0
+        } );
+
+      }, 100);
+    });
 }
 
 function hash_to_page ( hash_in ) {

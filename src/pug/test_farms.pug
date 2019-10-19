@@ -1,0 +1,61 @@
+include inc/mixins.pug
+
+section.section
+  .container
+    .columns
+      .column.is-full
+        h3.title.is-5 Compare of the different device farm:
+        ul
+          li
+            a(href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html" target="_blank") AWS Device Farm
+          li
+            a(href="https://saucelabs.com" target="_blank") Sauce Labs
+          li
+            a(href="https://wetest.qq.com/" target="_blank") WeTest
+          li
+            a(href="https://firebase.google.com/docs/test-lab" target="_blank") Firebase Test Lab
+
+    .columns
+      .column.is-full
+        h3.title.is-5 search popularity over time
+
+    .columns
+      each year in [1,5]
+        .column.is-one-quarter
+          +chart_interest_over_time(`search popularity over ${year} year`, {
+            keyword: [
+              'AWS Device Farm',
+              'Sauce Labs',
+              'WeTest',
+              'Firebase Test Lab'
+            ],
+            dayBack: 365 * year
+          })
+
+      .column.is-half
+        each year in [10]
+          +chart_interest_over_time(`search popularity over ${year} year`, {
+            keyword: [
+              'AWS Device Farm',
+              'Sauce Labs',
+              'WeTest',
+              'Firebase Test Lab'
+            ],
+            dayBack: 365 * year
+          })
+
+    .columns
+      .column.is-full
+        h3.title.is-5 search breakdown by location
+
+    .columns
+      each keyword_one in ['AWS Device Farm','Sauce Labs','WeTest','Firebase Test Lab']
+        each year in [1]
+          .column.is-one-quarter
+            +chart_vector_map( `search heat of "${keyword_one}" by region ${year} year`, {
+              keyword: [
+                keyword_one
+              ],
+              dayBack: 365 * year,
+              resolution: 'COUNTRY'
+            }, 'world-map')
