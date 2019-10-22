@@ -1,40 +1,40 @@
-<section class="section"><div class="container"><div class="columns"><div class="column is-full"><h3 class="title is-5">Compare of the different device farm:</h3><ul><li><a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html" target="_blank">AWS Device Farm</a></li><li><a href="https://saucelabs.com" target="_blank">Sauce Labs</a></li><li><a href="https://wetest.qq.com/" target="_blank">WeTest</a></li><li><a href="https://firebase.google.com/docs/test-lab" target="_blank">Firebase Test Lab</a></li></ul></div></div><div class="columns"><div class="column is-full"><h3 class="title is-5">search popularity over time</h3></div></div><div class="columns"><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">search popularity over 1 year</h3><div class="card_body"><div class="chart_container"><canvas id="chart__1444"></canvas></div><div class="content"><table class="table chart_info_table" id="table__1444"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
+<section class="section"><div class="container"><div class="columns"><div class="column is-full"><h3 class="title is-5">Compare of the different device farm:</h3><ul><li><a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html" target="_blank">AWS Device Farm</a></li><li><a href="https://saucelabs.com" target="_blank">Sauce Labs</a></li><li><a href="https://wetest.qq.com/" target="_blank">WeTest</a></li><li><a href="https://firebase.google.com/docs/test-lab" target="_blank">Firebase Test Lab</a></li></ul></div></div><div class="columns"><div class="column is-full"><h3 class="title is-5">search popularity over time</h3></div></div><div class="columns"><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">search popularity over 1 year</h3><div class="card_body"><div class="chart_container"><canvas id="chart__35583"></canvas></div><div class="content"><table class="table chart_info_table" id="table__35583"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
 fetch_post_request( {
     q: Q_INTEREST_OVER_TIME,
     param: {"keyword":["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"],"dayBack":365}
   } )
   .then( res => res.json() )
   .then( ( json ) => {
-    create_chart( "#"+"chart__1444", ["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"] , json );
+    create_chart( "#"+"chart__35583", ["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"] , json );
 
-    update_chart_info_table("#"+"table__1444", ["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"] , json)
+    update_chart_info_table("#"+"table__35583", ["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"] , json)
   } );
 
-</script></div></div><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">search popularity over 5 year</h3><div class="card_body"><div class="chart_container"><canvas id="chart__35741"></canvas></div><div class="content"><table class="table chart_info_table" id="table__35741"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
+</script></div></div><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">search popularity over 5 year</h3><div class="card_body"><div class="chart_container"><canvas id="chart__89728"></canvas></div><div class="content"><table class="table chart_info_table" id="table__89728"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
 fetch_post_request( {
     q: Q_INTEREST_OVER_TIME,
     param: {"keyword":["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"],"dayBack":1825}
   } )
   .then( res => res.json() )
   .then( ( json ) => {
-    create_chart( "#"+"chart__35741", ["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"] , json );
+    create_chart( "#"+"chart__89728", ["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"] , json );
 
-    update_chart_info_table("#"+"table__35741", ["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"] , json)
+    update_chart_info_table("#"+"table__89728", ["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"] , json)
   } );
 
-</script></div></div><div class="column is-half"><div class="cards"><h3 class="chart_title is-6 card_topic">search popularity over 10 year</h3><div class="card_body"><div class="chart_container"><canvas id="chart__76990"></canvas></div><div class="content"><table class="table chart_info_table" id="table__76990"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
+</script></div></div><div class="column is-half"><div class="cards"><h3 class="chart_title is-6 card_topic">search popularity over 10 year</h3><div class="card_body"><div class="chart_container"><canvas id="chart__28779"></canvas></div><div class="content"><table class="table chart_info_table" id="table__28779"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
 fetch_post_request( {
     q: Q_INTEREST_OVER_TIME,
     param: {"keyword":["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"],"dayBack":3650}
   } )
   .then( res => res.json() )
   .then( ( json ) => {
-    create_chart( "#"+"chart__76990", ["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"] , json );
+    create_chart( "#"+"chart__28779", ["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"] , json );
 
-    update_chart_info_table("#"+"table__76990", ["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"] , json)
+    update_chart_info_table("#"+"table__28779", ["AWS Device Farm","Sauce Labs","WeTest","Firebase Test Lab"] , json)
   } );
 
-</script></div></div></div><div class="columns"><div class="column is-full"><h3 class="title is-5">search breakdown by location</h3></div></div><div class="columns"><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">search heat of &quot;AWS Device Farm&quot; by region 1 year</h2><div class="map_container"><div id="search_45561" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div></div></div><div class="columns"><div class="column is-full"><h3 class="title is-5">search breakdown by location</h3></div></div><div class="columns"><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">search heat of &quot;AWS Device Farm&quot; by region 1 year</h2><div class="map_container"><div id="search_98582" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":["AWS Device Farm"],"dayBack":365,"resolution":"COUNTRY"}
 } )
@@ -47,7 +47,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_51125" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_66301" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -71,10 +71,10 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_45561 = jQuery( '#' + 'search_45561' );
-  map_search_45561.vectorMap(jqvmap_config );
+  var map_search_98582 = jQuery( '#' + 'search_98582' );
+  map_search_98582.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_51125" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">search heat of &quot;Sauce Labs&quot; by region 1 year</h2><div class="map_container"><div id="search_10796" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_66301" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">search heat of &quot;Sauce Labs&quot; by region 1 year</h2><div class="map_container"><div id="search_51509" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":["Sauce Labs"],"dayBack":365,"resolution":"COUNTRY"}
 } )
@@ -87,7 +87,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_6007" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_10242" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -111,10 +111,10 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_10796 = jQuery( '#' + 'search_10796' );
-  map_search_10796.vectorMap(jqvmap_config );
+  var map_search_51509 = jQuery( '#' + 'search_51509' );
+  map_search_51509.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_6007" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">search heat of &quot;WeTest&quot; by region 1 year</h2><div class="map_container"><div id="search_3629" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_10242" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">search heat of &quot;WeTest&quot; by region 1 year</h2><div class="map_container"><div id="search_95271" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":["WeTest"],"dayBack":365,"resolution":"COUNTRY"}
 } )
@@ -127,7 +127,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_93354" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_95281" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -151,10 +151,10 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_3629 = jQuery( '#' + 'search_3629' );
-  map_search_3629.vectorMap(jqvmap_config );
+  var map_search_95271 = jQuery( '#' + 'search_95271' );
+  map_search_95271.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_93354" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">search heat of &quot;Firebase Test Lab&quot; by region 1 year</h2><div class="map_container"><div id="search_66960" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_95281" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">search heat of &quot;Firebase Test Lab&quot; by region 1 year</h2><div class="map_container"><div id="search_37140" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":["Firebase Test Lab"],"dayBack":365,"resolution":"COUNTRY"}
 } )
@@ -167,7 +167,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_92577" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_43320" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -191,7 +191,7 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_66960 = jQuery( '#' + 'search_66960' );
-  map_search_66960.vectorMap(jqvmap_config );
+  var map_search_37140 = jQuery( '#' + 'search_37140' );
+  map_search_37140.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_92577" style="text-align: center;"></table></div></div></div></div></div></section>
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_43320" style="text-align: center;"></table></div></div></div></div></div></section>

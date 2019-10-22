@@ -6,7 +6,10 @@
   "directories": {
     "doc": "docs"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@prettier/plugin-pug": "^1.0.4",
+    "prettier": "^1.18.2"
+  },
   "devDependencies": {
     "express": "^4.17.1",
     "gulp": "^4.0.2",
