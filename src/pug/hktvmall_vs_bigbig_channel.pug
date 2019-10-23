@@ -1,0 +1,34 @@
+include inc/mixins.pug
+
+- var compare_list = ['bigbigchannel','HKTVmall']
+
+section.section.empty_page
+  .container
+    h3.title.is-5 Search populatity (time against country)
+    .columns.is-multiline
+      each location in ['HK','TW','US','']
+        .column.is-one-quarter
+          if location != ''
+            +chart_interest_over_time('Search compare (3 year, '+ location +')', {
+              geo: location,
+              keyword: compare_list,
+              dayBack: 365 * 3
+            })
+          else
+            +chart_interest_over_time('Search compare (3 year, world)', {
+              keyword: compare_list,
+              dayBack: 365 * 3
+            })
+
+section.section
+  .container
+    h3.title.is-5 forum populatity over country
+    .columns.is-multiline
+      each forum in compare_list
+        each years in [1,5]
+          .column.is-one-quarter
+            +chart_vector_map( '"'+forum + '" heat by region ('+years+' year)', {
+              keyword: forum,
+              dayBack: 365 * years,
+              resolution: 'COUNTRY'
+            }, 'world-map')
