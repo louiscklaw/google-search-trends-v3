@@ -1,0 +1,481 @@
+<section class="section"><div class="container"><div class="columns"></div><h3 class="title is-5">messenger popularity compare by country</h3><div class="columns"><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">whatsapp heat by region (1 year)</h2><div class="map_container"><div id="search_72247" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"/m/0gwzvs1","dayBack":365,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_21562" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+  var jqvmap_config = {
+    map: 'world_en',
+    backgroundColor: 'rgba(189, 195, 199,0.1)',
+    hoverColor: 'rgba(211, 84, 0,1.0)',
+    enableZoom: false,
+    onLabelShow: function ( event, label, code ) {
+
+      label.html(
+        tooltips_template
+          .replace('$country_name$', cc_conv[code])
+          .replace('$value$', result[code.toUpperCase()])
+      );
+    }
+  }
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+
+  var map_search_72247 = jQuery( '#' + 'search_72247' );
+  map_search_72247.vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_21562" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">line heat by region (1 year)</h2><div class="map_container"><div id="search_74583" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"/m/0k3msl2","dayBack":365,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_35183" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+  var jqvmap_config = {
+    map: 'world_en',
+    backgroundColor: 'rgba(189, 195, 199,0.1)',
+    hoverColor: 'rgba(211, 84, 0,1.0)',
+    enableZoom: false,
+    onLabelShow: function ( event, label, code ) {
+
+      label.html(
+        tooltips_template
+          .replace('$country_name$', cc_conv[code])
+          .replace('$value$', result[code.toUpperCase()])
+      );
+    }
+  }
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+
+  var map_search_74583 = jQuery( '#' + 'search_74583' );
+  map_search_74583.vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_35183" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">telegram heat by region (1 year)</h2><div class="map_container"><div id="search_68313" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"/m/0zwk75g","dayBack":365,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_32511" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+  var jqvmap_config = {
+    map: 'world_en',
+    backgroundColor: 'rgba(189, 195, 199,0.1)',
+    hoverColor: 'rgba(211, 84, 0,1.0)',
+    enableZoom: false,
+    onLabelShow: function ( event, label, code ) {
+
+      label.html(
+        tooltips_template
+          .replace('$country_name$', cc_conv[code])
+          .replace('$value$', result[code.toUpperCase()])
+      );
+    }
+  }
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+
+  var map_search_68313 = jQuery( '#' + 'search_68313' );
+  map_search_68313.vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_32511" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">wechat heat by region (1 year)</h2><div class="map_container"><div id="search_15371" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"/m/0h_9v3h","dayBack":365,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_90104" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+  var jqvmap_config = {
+    map: 'world_en',
+    backgroundColor: 'rgba(189, 195, 199,0.1)',
+    hoverColor: 'rgba(211, 84, 0,1.0)',
+    enableZoom: false,
+    onLabelShow: function ( event, label, code ) {
+
+      label.html(
+        tooltips_template
+          .replace('$country_name$', cc_conv[code])
+          .replace('$value$', result[code.toUpperCase()])
+      );
+    }
+  }
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+
+  var map_search_15371 = jQuery( '#' + 'search_15371' );
+  map_search_15371.vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_90104" style="text-align: center;"></table></div></div></div></div><div class="columns"><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">whatsapp heat by region (5 year)</h2><div class="map_container"><div id="search_75820" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"/m/0gwzvs1","dayBack":1825,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_35746" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+  var jqvmap_config = {
+    map: 'world_en',
+    backgroundColor: 'rgba(189, 195, 199,0.1)',
+    hoverColor: 'rgba(211, 84, 0,1.0)',
+    enableZoom: false,
+    onLabelShow: function ( event, label, code ) {
+
+      label.html(
+        tooltips_template
+          .replace('$country_name$', cc_conv[code])
+          .replace('$value$', result[code.toUpperCase()])
+      );
+    }
+  }
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+
+  var map_search_75820 = jQuery( '#' + 'search_75820' );
+  map_search_75820.vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_35746" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">line heat by region (5 year)</h2><div class="map_container"><div id="search_98858" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"/m/0k3msl2","dayBack":1825,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_16072" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+  var jqvmap_config = {
+    map: 'world_en',
+    backgroundColor: 'rgba(189, 195, 199,0.1)',
+    hoverColor: 'rgba(211, 84, 0,1.0)',
+    enableZoom: false,
+    onLabelShow: function ( event, label, code ) {
+
+      label.html(
+        tooltips_template
+          .replace('$country_name$', cc_conv[code])
+          .replace('$value$', result[code.toUpperCase()])
+      );
+    }
+  }
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+
+  var map_search_98858 = jQuery( '#' + 'search_98858' );
+  map_search_98858.vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_16072" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">telegram heat by region (5 year)</h2><div class="map_container"><div id="search_43714" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"/m/0zwk75g","dayBack":1825,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_43078" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+  var jqvmap_config = {
+    map: 'world_en',
+    backgroundColor: 'rgba(189, 195, 199,0.1)',
+    hoverColor: 'rgba(211, 84, 0,1.0)',
+    enableZoom: false,
+    onLabelShow: function ( event, label, code ) {
+
+      label.html(
+        tooltips_template
+          .replace('$country_name$', cc_conv[code])
+          .replace('$value$', result[code.toUpperCase()])
+      );
+    }
+  }
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+
+  var map_search_43714 = jQuery( '#' + 'search_43714' );
+  map_search_43714.vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_43078" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">wechat heat by region (5 year)</h2><div class="map_container"><div id="search_26993" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"/m/0h_9v3h","dayBack":1825,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_54575" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+  var jqvmap_config = {
+    map: 'world_en',
+    backgroundColor: 'rgba(189, 195, 199,0.1)',
+    hoverColor: 'rgba(211, 84, 0,1.0)',
+    enableZoom: false,
+    onLabelShow: function ( event, label, code ) {
+
+      label.html(
+        tooltips_template
+          .replace('$country_name$', cc_conv[code])
+          .replace('$value$', result[code.toUpperCase()])
+      );
+    }
+  }
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+
+  var map_search_26993 = jQuery( '#' + 'search_26993' );
+  map_search_26993.vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_54575" style="text-align: center;"></table></div></div></div></div><div class="columns"><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">whatsapp heat by region (10 year)</h2><div class="map_container"><div id="search_95429" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"/m/0gwzvs1","dayBack":3650,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_41835" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+  var jqvmap_config = {
+    map: 'world_en',
+    backgroundColor: 'rgba(189, 195, 199,0.1)',
+    hoverColor: 'rgba(211, 84, 0,1.0)',
+    enableZoom: false,
+    onLabelShow: function ( event, label, code ) {
+
+      label.html(
+        tooltips_template
+          .replace('$country_name$', cc_conv[code])
+          .replace('$value$', result[code.toUpperCase()])
+      );
+    }
+  }
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+
+  var map_search_95429 = jQuery( '#' + 'search_95429' );
+  map_search_95429.vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_41835" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">line heat by region (10 year)</h2><div class="map_container"><div id="search_98073" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"/m/0k3msl2","dayBack":3650,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_64142" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+  var jqvmap_config = {
+    map: 'world_en',
+    backgroundColor: 'rgba(189, 195, 199,0.1)',
+    hoverColor: 'rgba(211, 84, 0,1.0)',
+    enableZoom: false,
+    onLabelShow: function ( event, label, code ) {
+
+      label.html(
+        tooltips_template
+          .replace('$country_name$', cc_conv[code])
+          .replace('$value$', result[code.toUpperCase()])
+      );
+    }
+  }
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+
+  var map_search_98073 = jQuery( '#' + 'search_98073' );
+  map_search_98073.vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_64142" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">telegram heat by region (10 year)</h2><div class="map_container"><div id="search_48845" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"/m/0zwk75g","dayBack":3650,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_22213" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+  var jqvmap_config = {
+    map: 'world_en',
+    backgroundColor: 'rgba(189, 195, 199,0.1)',
+    hoverColor: 'rgba(211, 84, 0,1.0)',
+    enableZoom: false,
+    onLabelShow: function ( event, label, code ) {
+
+      label.html(
+        tooltips_template
+          .replace('$country_name$', cc_conv[code])
+          .replace('$value$', result[code.toUpperCase()])
+      );
+    }
+  }
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+
+  var map_search_48845 = jQuery( '#' + 'search_48845' );
+  map_search_48845.vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_22213" style="text-align: center;"></table></div></div></div><div class="column is-one-quarter"><div class="cards"><h2 class="card_topic">wechat heat by region (10 year)</h2><div class="map_container"><div id="search_48268" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+  q: Q_INTEREST_BY_REGION,
+  param: {"keyword":"/m/0h_9v3h","dayBack":3650,"resolution":"COUNTRY"}
+} )
+.then( res => res.json())
+.then( json => {
+  var obj = {};
+  json.default.geoMapData.forEach( x => {
+    obj[ x.geoCode ] = x.value[ 0 ];
+  } )
+  return obj;
+})
+.then( result => {
+  get_ele( "#" + "table_82191" ).innerHTML = gen_top_x_table(
+    result,
+    3);
+
+  var tooltips_template = '<div class="map-tooltip"><h1 class="header">$country_name$</h1><p class="description">value: $value$</p></div>';
+
+  var jqvmap_config = {
+    map: 'world_en',
+    backgroundColor: 'rgba(189, 195, 199,0.1)',
+    hoverColor: 'rgba(211, 84, 0,1.0)',
+    enableZoom: false,
+    onLabelShow: function ( event, label, code ) {
+
+      label.html(
+        tooltips_template
+          .replace('$country_name$', cc_conv[code])
+          .replace('$value$', result[code.toUpperCase()])
+      );
+    }
+  }
+
+  jqvmap_config['colors']= calc_colors_for_jqvmap(
+    result, 'rgba(61, 61, 61,0.1)', 'rgba(61, 61, 61,1.0)' );
+
+  var map_search_48268 = jQuery( '#' + 'search_48268' );
+  map_search_48268.vectorMap(jqvmap_config );
+} )
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_82191" style="text-align: center;"></table></div></div></div></div></div></section>

@@ -140,24 +140,24 @@ function create_chart ( chart_id_sel_in, keywords_in, data_json ) {
     data: {
       labels: extract_chart_label( data_json ),
       datasets: _.range( keywords_in.length ).map( x => {
-        if ( typeof ( x ) == 'object' ) {
+        if ( typeof ( x ) == typeof({}) ) {
           // TODO: update me
           console.log( keywords_in[x][1] );
+
           //return {
           //  label: keywords_in[x][1],
           //  backgroundColor: CHART_COLORS[x][0].replace( '1.0', '0.1' ),
           //  borderColor: CHART_COLORS[x][0],
           //  data: extract_chart_data( data_json, x ),
-          //}
-        else {
+
+        } else {
           return {
             label: keywords_in[x],
-            backgroundColor: CHART_COLORS[x][0].replace( '1.0', '0.1' ),
+            backgroundColor: CHART_COLORS[x][0].replace( '1.0', '0.2' ),
             borderColor: CHART_COLORS[x][0],
             data: extract_chart_data( data_json, x ),
           }
         }
-      }
       } )
     },
     options: {

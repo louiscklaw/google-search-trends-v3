@@ -25,7 +25,7 @@ function extract_ranked_keyword ( json_in ) {
 }
 
 function related_queries ( sel_in, param_in, max_row ) {
-  console.log( sel_in );
+  get_ele( sel_in ).innerHTML = 'loading';
   fetch_post_request( {
       q: Q_RELATED_QUERIES,
       param: param_in
