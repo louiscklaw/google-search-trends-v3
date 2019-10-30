@@ -1,0 +1,52 @@
+include inc/mixins.pug
+
+- var whatsapp_mobile_application = ['/m/0gwzvs1', 'whatsapp']
+- var line_search_term = ['/m/0k3msl2','line']
+- var teletram_search_term = ['/m/0zwk75g', 'telegram']
+- var wechat_search_term = ['/m/0h_9v3h','wechat']
+
+- var search_list =  [whatsapp_mobile_application, line_search_term , teletram_search_term, wechat_search_term]
+- var keyword_list = search_list.map(x => x[1])
+
+//- section.section
+  .container
+    .columns
+      .column.is-full
+        h3.title.is-5 messenger popularity over time the world
+    .columns
+      each year in [1,5]
+        .column.is-half
+          +chart_interest_over_time('messanger compare '+year+' year', {
+
+            keyword: keyword_list,
+            dayBack: 365 * year
+          })
+
+    .columns
+      .column.is-full
+        h3.title.is-5 messenger popularity over time
+    each geo_temp in ['HK', 'TW']
+      .columns
+        each year in [1,5]
+          .column.is-one-sixth
+            +chart_interest_over_time(`messanger compare ${year} year (${geo_temp})`, {
+              geo: geo_temp,
+              keyword: keyword_list,
+              dayBack: 365 * year
+            })
+
+section.section
+  .container
+    .columns
+    h3.title.is-5 messenger popularity compare by country
+    each years in [1,5,10]
+      .columns
+        each temp in search_list
+          - var search_term = temp[0]
+          - var search_text = temp[1]
+          .column.is-one-quarter
+            +chart_vector_map( search_text + ' heat by region ('+years+' year)', {
+              keyword: search_term,
+              dayBack: 365 * years,
+              resolution: 'COUNTRY'
+            }, 'world-map')

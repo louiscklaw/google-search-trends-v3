@@ -23,8 +23,8 @@
     "gulp-rename": "^1.4.0"
   },
   "scripts": {
-    "test_server": "set RUN_ENV=DEBUG && nodemon --delay 0.3 server.js",
-    "gulp_regen": "nodemon -w ./src --ext '*.*' --exec gulp"
+    "test_server": "set RUN_ENV=DEBUG && nodemon -w docs --delay 0.3 server.js",
+    "gulp_regen": "nodemon -w src --ext '*' --exec gulp"
   },
   "repository": {
     "type": "git",
