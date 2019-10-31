@@ -1,52 +1,52 @@
-<section class="section empty_page"><div class="container"><h3 class="title is-5">forum populatity (time against country)</h3><div class="columns"><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">forum compare (3 year, HK)</h3><div class="card_body"><div class="chart_container"><canvas id="chart__16543"></canvas></div><div class="content"><table class="table chart_info_table" id="table__16543"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
+<section class="section empty_page"><div class="container"><h3 class="title is-5">forum populatity (time against country)</h3><div class="columns"><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">forum compare (3 year, HK)</h3><div class="card_body"><div class="chart_container"><canvas id="chart__18402"></canvas></div><div class="content"><table class="table chart_info_table" id="table__18402"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
 fetch_post_request( {
     q: Q_INTEREST_OVER_TIME,
     param: {"geo":"HK","keyword":["lihkg","hkgolden","hkepc","批踢踢","uwants"],"dayBack":1095}
   } )
   .then( res => res.json() )
   .then( ( json ) => {
-    create_chart( "#"+"chart__16543", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json );
+    create_chart( "#"+"chart__18402", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json );
 
-    update_chart_info_table("#"+"table__16543", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json)
+    update_chart_info_table("#"+"table__18402", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json)
   } );
 
-</script></div></div><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">forum compare (3 year, TW)</h3><div class="card_body"><div class="chart_container"><canvas id="chart__13941"></canvas></div><div class="content"><table class="table chart_info_table" id="table__13941"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
+</script></div></div><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">forum compare (3 year, TW)</h3><div class="card_body"><div class="chart_container"><canvas id="chart__43972"></canvas></div><div class="content"><table class="table chart_info_table" id="table__43972"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
 fetch_post_request( {
     q: Q_INTEREST_OVER_TIME,
     param: {"geo":"TW","keyword":["lihkg","hkgolden","hkepc","批踢踢","uwants"],"dayBack":1095}
   } )
   .then( res => res.json() )
   .then( ( json ) => {
-    create_chart( "#"+"chart__13941", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json );
+    create_chart( "#"+"chart__43972", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json );
 
-    update_chart_info_table("#"+"table__13941", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json)
+    update_chart_info_table("#"+"table__43972", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json)
   } );
 
-</script></div></div><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">forum compare (3 year, US)</h3><div class="card_body"><div class="chart_container"><canvas id="chart__66333"></canvas></div><div class="content"><table class="table chart_info_table" id="table__66333"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
+</script></div></div><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">forum compare (3 year, US)</h3><div class="card_body"><div class="chart_container"><canvas id="chart__65400"></canvas></div><div class="content"><table class="table chart_info_table" id="table__65400"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
 fetch_post_request( {
     q: Q_INTEREST_OVER_TIME,
     param: {"geo":"US","keyword":["lihkg","hkgolden","hkepc","批踢踢","uwants"],"dayBack":1095}
   } )
   .then( res => res.json() )
   .then( ( json ) => {
-    create_chart( "#"+"chart__66333", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json );
+    create_chart( "#"+"chart__65400", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json );
 
-    update_chart_info_table("#"+"table__66333", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json)
+    update_chart_info_table("#"+"table__65400", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json)
   } );
 
-</script></div></div><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">forum compare (3 year, world)</h3><div class="card_body"><div class="chart_container"><canvas id="chart__22517"></canvas></div><div class="content"><table class="table chart_info_table" id="table__22517"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
+</script></div></div><div class="column is-one-quarter"><div class="cards"><h3 class="chart_title is-6 card_topic">forum compare (3 year, world)</h3><div class="card_body"><div class="chart_container"><canvas id="chart__56503"></canvas></div><div class="content"><table class="table chart_info_table" id="table__56503"></table></div></div><script>//- keywords_to_search = [ 'Valentines Day' ];
 fetch_post_request( {
     q: Q_INTEREST_OVER_TIME,
     param: {"keyword":["lihkg","hkgolden","hkepc","批踢踢","uwants"],"dayBack":1095}
   } )
   .then( res => res.json() )
   .then( ( json ) => {
-    create_chart( "#"+"chart__22517", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json );
+    create_chart( "#"+"chart__56503", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json );
 
-    update_chart_info_table("#"+"table__22517", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json)
+    update_chart_info_table("#"+"table__56503", ["lihkg","hkgolden","hkepc","批踢踢","uwants"] , json)
   } );
 
-</script></div></div></div></div></section><section class="section"><div class="container"><h3 class="title is-5">forum populatity over country</h3><div class="columns"><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;lihkg&quot; heat by region (1 year)</h2><div class="map_container"><div id="search_37511" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div></div></div></div></section><section class="section"><div class="container"><h3 class="title is-5">forum populatity over country</h3><div class="columns"><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;lihkg&quot; heat by region (1 year)</h2><div class="map_container"><div id="search_98755" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"lihkg","dayBack":365,"resolution":"COUNTRY"}
 } )
@@ -59,7 +59,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_2930" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_25173" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -84,10 +84,10 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_37511 = jQuery( '#' + 'search_37511' );
-  map_search_37511.vectorMap(jqvmap_config );
+  var map_search_98755 = jQuery( '#' + 'search_98755' );
+  map_search_98755.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_2930" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;hkgolden&quot; heat by region (1 year)</h2><div class="map_container"><div id="search_7056" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_25173" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;hkgolden&quot; heat by region (1 year)</h2><div class="map_container"><div id="search_79683" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"hkgolden","dayBack":365,"resolution":"COUNTRY"}
 } )
@@ -100,7 +100,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_51222" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_97201" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -125,10 +125,10 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_7056 = jQuery( '#' + 'search_7056' );
-  map_search_7056.vectorMap(jqvmap_config );
+  var map_search_79683 = jQuery( '#' + 'search_79683' );
+  map_search_79683.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_51222" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;hkepc&quot; heat by region (1 year)</h2><div class="map_container"><div id="search_1158" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_97201" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;hkepc&quot; heat by region (1 year)</h2><div class="map_container"><div id="search_12560" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"hkepc","dayBack":365,"resolution":"COUNTRY"}
 } )
@@ -141,7 +141,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_54836" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_29989" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -166,10 +166,10 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_1158 = jQuery( '#' + 'search_1158' );
-  map_search_1158.vectorMap(jqvmap_config );
+  var map_search_12560 = jQuery( '#' + 'search_12560' );
+  map_search_12560.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_54836" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;批踢踢&quot; heat by region (1 year)</h2><div class="map_container"><div id="search_81233" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_29989" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;批踢踢&quot; heat by region (1 year)</h2><div class="map_container"><div id="search_85090" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"批踢踢","dayBack":365,"resolution":"COUNTRY"}
 } )
@@ -182,7 +182,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_81826" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_32544" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -207,10 +207,10 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_81233 = jQuery( '#' + 'search_81233' );
-  map_search_81233.vectorMap(jqvmap_config );
+  var map_search_85090 = jQuery( '#' + 'search_85090' );
+  map_search_85090.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_81826" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;uwants&quot; heat by region (1 year)</h2><div class="map_container"><div id="search_81965" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_32544" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;uwants&quot; heat by region (1 year)</h2><div class="map_container"><div id="search_98867" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"uwants","dayBack":365,"resolution":"COUNTRY"}
 } )
@@ -223,7 +223,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_47239" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_89477" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -248,10 +248,10 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_81965 = jQuery( '#' + 'search_81965' );
-  map_search_81965.vectorMap(jqvmap_config );
+  var map_search_98867 = jQuery( '#' + 'search_98867' );
+  map_search_98867.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_47239" style="text-align: center;"></table></div></div></div></div><div class="columns"><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;lihkg&quot; heat by region (5 year)</h2><div class="map_container"><div id="search_88025" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_89477" style="text-align: center;"></table></div></div></div></div><div class="columns"><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;lihkg&quot; heat by region (5 year)</h2><div class="map_container"><div id="search_49337" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"lihkg","dayBack":1825,"resolution":"COUNTRY"}
 } )
@@ -264,7 +264,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_68144" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_67752" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -289,10 +289,10 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_88025 = jQuery( '#' + 'search_88025' );
-  map_search_88025.vectorMap(jqvmap_config );
+  var map_search_49337 = jQuery( '#' + 'search_49337' );
+  map_search_49337.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_68144" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;hkgolden&quot; heat by region (5 year)</h2><div class="map_container"><div id="search_1863" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_67752" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;hkgolden&quot; heat by region (5 year)</h2><div class="map_container"><div id="search_10143" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"hkgolden","dayBack":1825,"resolution":"COUNTRY"}
 } )
@@ -305,7 +305,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_68753" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_40696" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -330,10 +330,10 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_1863 = jQuery( '#' + 'search_1863' );
-  map_search_1863.vectorMap(jqvmap_config );
+  var map_search_10143 = jQuery( '#' + 'search_10143' );
+  map_search_10143.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_68753" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;hkepc&quot; heat by region (5 year)</h2><div class="map_container"><div id="search_46433" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_40696" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;hkepc&quot; heat by region (5 year)</h2><div class="map_container"><div id="search_49399" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"hkepc","dayBack":1825,"resolution":"COUNTRY"}
 } )
@@ -346,7 +346,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_63008" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_63071" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -371,10 +371,10 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_46433 = jQuery( '#' + 'search_46433' );
-  map_search_46433.vectorMap(jqvmap_config );
+  var map_search_49399 = jQuery( '#' + 'search_49399' );
+  map_search_49399.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_63008" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;批踢踢&quot; heat by region (5 year)</h2><div class="map_container"><div id="search_21122" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_63071" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;批踢踢&quot; heat by region (5 year)</h2><div class="map_container"><div id="search_62545" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"批踢踢","dayBack":1825,"resolution":"COUNTRY"}
 } )
@@ -387,7 +387,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_71674" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_44931" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -412,10 +412,10 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_21122 = jQuery( '#' + 'search_21122' );
-  map_search_21122.vectorMap(jqvmap_config );
+  var map_search_62545 = jQuery( '#' + 'search_62545' );
+  map_search_62545.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_71674" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;uwants&quot; heat by region (5 year)</h2><div class="map_container"><div id="search_40277" style="height:100%; width:100%;"></div><script>fetch_post_request( {
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_44931" style="text-align: center;"></table></div></div></div><div class="column is-one-fifth"><div class="cards"><h2 class="card_topic">&quot;uwants&quot; heat by region (5 year)</h2><div class="map_container"><div id="search_34725" style="height:100%; width:100%;"></div><script>fetch_post_request( {
   q: Q_INTEREST_BY_REGION,
   param: {"keyword":"uwants","dayBack":1825,"resolution":"COUNTRY"}
 } )
@@ -428,7 +428,7 @@ fetch_post_request( {
   return obj;
 })
 .then( result => {
-  get_ele( "#" + "table_48697" ).innerHTML = gen_top_x_table(
+  get_ele( "#" + "table_30472" ).innerHTML = gen_top_x_table(
     result,
     3);
 
@@ -453,7 +453,7 @@ fetch_post_request( {
   jqvmap_config['colors']= calc_colors_for_jqvmap(
     result, min_color, max_color );
 
-  var map_search_40277 = jQuery( '#' + 'search_40277' );
-  map_search_40277.vectorMap(jqvmap_config );
+  var map_search_34725 = jQuery( '#' + 'search_34725' );
+  map_search_34725.vectorMap(jqvmap_config );
 } )
-</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_48697" style="text-align: center;"></table></div></div></div></div></div></section>
+</script></div><div class="table_container"><h6 class="title is-6">top 3 country listing</h6><table class="table top_3_country" id="table_30472" style="text-align: center;"></table></div></div></div></div></div></section>

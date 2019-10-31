@@ -1,0 +1,46 @@
+include inc/mixins.pug
+
+- var call4Van = ['CALL4VAN', 'CALL4VAN']
+- var lalamove = ['lalamove','lalamove']
+- var gogovan = ['GoGoVan', 'GoGoVan']
+
+- var search_list =  [call4Van, lalamove , gogovan]
+- var keyword_list = search_list.map(x => x[1])
+
+section.section
+  .container
+    .columns
+      .column.is-full
+        h3.title.is-5 search popularity over time
+    .columns
+      each year in [1,5]
+        .column.is-one-quarter
+          +chart_interest_over_time('search compare '+year+' year', {
+            geo: 'HK',
+            keyword: ['CALL4VAN','lalamove','GoGoVan'],
+            dayBack: 365 * year
+          })
+
+      .column.is-half
+        each year in [10]
+          +chart_interest_over_time('search compare '+year+' year', {
+            geo: 'HK',
+            keyword: ['CALL4VAN','lalamove','GoGoVan'],
+            dayBack: 365 * year
+          })
+
+section.section
+  .container
+    .columns
+    h3.title.is-5 search popularity compare by country
+    each years in [1,5,10]
+      .columns
+        each temp in search_list
+          - var search_term = temp[0]
+          - var search_text = temp[1]
+          .column.is-one-third
+            +chart_vector_map( search_text + ' heat by region ('+years+' year)', {
+              keyword: search_term,
+              dayBack: 365 * years,
+              resolution: 'COUNTRY'
+            }, 'world-map')

@@ -12,8 +12,9 @@ nav(class="navbar is-fixed-top is-transparent" role="navigation" aria-label="mai
 
   div(id="navbarBasicExample" class="navbar-menu")
     .navbar-start
-      each val in ['Helloworld', 'Programming language','lihkg vs hkgolden','hktvmall vs bigbig channel','jobs ads', 'IOT','tech terms','test farms','belt and road']
-        a.navbar-item(href="#"+ escape(val)) #{val}
+      each val in ['Helloworld', 'Programming language','lihkg vs hkgolden','hktvmall vs bigbig channel','jobs ads', 'IOT','tech terms','test farms','belt and road','transport goods']
+        a.navbar-item(href="#"+escape(val)) #{val}
+
       div(class="navbar-item has-dropdown is-hoverable")
         a(class="navbar-link") More
         div.navbar-dropdown
